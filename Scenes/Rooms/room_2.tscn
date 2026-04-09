@@ -1,10 +1,9 @@
-[gd_scene format=4 uid="uid://tx0044ga1l47"]
+[gd_scene format=3 uid="uid://bxr8ofrraepb4"]
 
-[ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Base32x32-47Dungeon.png" id="1_3t5sg"]
-[ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_m8co2"]
+[ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Base32x32-47Dungeon.png" id="1_e4ips"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ikea"]
-texture = ExtResource("1_3t5sg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
+texture = ExtResource("1_e4ips")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, 12, 16, 12, -12, -12, -12, -11.874729, 16, -16, 16)
@@ -142,16 +141,12 @@ texture_region_size = Vector2i(32, 32)
 11:3/0 = 0
 11:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 12, -16, 12, 12, -16, 12, -16, 16, 16, 16)
 
-[sub_resource type="TileSet" id="TileSet_is5ow"]
+[sub_resource type="TileSet" id="TileSet_b204x"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4ikea")
+sources/0 = SubResource("TileSetAtlasSource_3lycl")
 
-[node name="Room1" type="Node2D" unique_id=897087230]
+[node name="Room2" type="Node2D" unique_id=436119235]
 
-[node name="DungeonTiles" type="TileMapLayer" parent="." unique_id=1957981604]
-tile_map_data = PackedByteArray("AAAAAAAAAAAIAAAAAAABAAAAAAAKAAAAAAACAAAAAAAKAAAAAAADAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAAAAQAAAAIAAMAAAAEAAQAAAALAAMAAAACAAQAAAAKAAMAAAABAAQAAAAJAAMAAAADAAQAAAAJAAMAAAAEAAEAAAALAAIAAAAEAAIAAAALAAIAAAAEAAMAAAALAAIAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAEAAAAAAAMAAAAIAAEAAAABAAEAAAAJAAIAAAACAAEAAAAJAAIAAAADAAEAAAAJAAIAAAADAAIAAAAJAAIAAAACAAIAAAAJAAIAAAABAAIAAAAJAAIAAAABAAMAAAAJAAIAAAACAAMAAAAJAAIAAAADAAMAAAAJAAIAAAA=")
-tile_set = SubResource("TileSet_is5ow")
-
-[node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_m8co2")]
-position = Vector2(77, 74)
+[node name="DungeonTiles" type="TileMapLayer" parent="." unique_id=685220191]
+tile_set = SubResource("TileSet_b204x")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6bd15mjyo761"]
 
 [ext_resource type="Script" uid="uid://2sysr4sxpfe5" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://eeh3f5khs76d" path="res://Assets/Unarmed_Idle/Unarmed_Idle_full.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://eeh3f5khs76d" path="res://Assets/Player Assets/Unarmed_Idle/Unarmed_Idle_full.png" id="2_cvnsp"]
 [ext_resource type="AudioStream" uid="uid://ksuphi1gwrqd" path="res://Assets/Music/08-The Cave.mp3" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
@@ -320,13 +320,11 @@ shape = SubResource("RectangleShape2D_vgqql")
 [node name="IdleSprite" type="AnimatedSprite2D" parent="." unique_id=2048108824]
 sprite_frames = SubResource("SpriteFrames_7ldla")
 animation = &"Down"
-autoplay = "Down"
-frame_progress = 0.039245345
+frame_progress = 0.94982105
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1989947407]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=593044892]
 stream = ExtResource("3_6t5aa")
 volume_db = -2.0
-autoplay = true
