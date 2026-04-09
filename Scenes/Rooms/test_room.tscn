@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b8hubwhj6ag43"]
 
-[ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Base32x32-47Dungeon.png" id="1_ycph5"]
+[ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_ycph5"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_6idp7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6idp7"]
