@@ -273,13 +273,15 @@ shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1989947407]
 zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=593044892]
 stream = ExtResource("3_6t5aa")
 volume_db = -2.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=834169456]
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="." unique_id=834169456]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_ukyrk")
-animation = &"front_flying"
+animation = &"left_flying"
 autoplay = "front_flying"
