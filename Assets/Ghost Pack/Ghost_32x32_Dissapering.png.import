@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cse7d75vvo2ij"
-path="res://.godot/imported/Unarmed_Idle3_head.png-f8e89bd0b42fbea8eedb6b64cc0bff6b.ctex"
+uid="uid://c5m1h3guk0g4m"
+path="res://.godot/imported/Ghost_32x32_Dissapering.png-9a0ed10a1536134632006b2113f50201.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player Assets/Unarmed_Idle/Unarmed_Idle3_head.png"
-dest_files=["res://.godot/imported/Unarmed_Idle3_head.png-f8e89bd0b42fbea8eedb6b64cc0bff6b.ctex"]
+source_file="res://Assets/Ghost Pack/Ghost_32x32_Dissapering.png"
+dest_files=["res://.godot/imported/Ghost_32x32_Dissapering.png-9a0ed10a1536134632006b2113f50201.ctex"]
 
 [params]
 

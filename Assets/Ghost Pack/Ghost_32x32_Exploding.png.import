@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gn876gq1ddhr"
-path="res://.godot/imported/Unarmed_Idle1_shadow.png-05249eddf49a862675789bbd41ffddcf.ctex"
+uid="uid://utpd1d6gdvps"
+path="res://.godot/imported/Ghost_32x32_Exploding.png-f84584614139ba3604ea8455ab6ce6ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player Assets/Unarmed_Idle/Unarmed_Idle1_shadow.png"
-dest_files=["res://.godot/imported/Unarmed_Idle1_shadow.png-05249eddf49a862675789bbd41ffddcf.ctex"]
+source_file="res://Assets/Ghost Pack/Ghost_32x32_Exploding.png"
+dest_files=["res://.godot/imported/Ghost_32x32_Exploding.png-f84584614139ba3604ea8455ab6ce6ee.ctex"]
 
 [params]
 

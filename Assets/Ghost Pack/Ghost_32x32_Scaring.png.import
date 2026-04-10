@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4h6mnsbx6krn"
-path="res://.godot/imported/Unarmed_Walk2_body.png-a04771bb5bc46ea0574abda936787fc5.ctex"
+uid="uid://cb3eqrf481be1"
+path="res://.godot/imported/Ghost_32x32_Scaring.png-d0a108d30f9b53e115b7cf25ea146cc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player Assets/Unarmed_Walk/Unarmed_Walk2_body.png"
-dest_files=["res://.godot/imported/Unarmed_Walk2_body.png-a04771bb5bc46ea0574abda936787fc5.ctex"]
+source_file="res://Assets/Ghost Pack/Ghost_32x32_Scaring.png"
+dest_files=["res://.godot/imported/Ghost_32x32_Scaring.png-d0a108d30f9b53e115b7cf25ea146cc0.ctex"]
 
 [params]
 
