@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt7cx7a7cdtw2"
-path="res://.godot/imported/Levers.png-84fda002ee21545824dd49f64115d893.ctex"
+uid="uid://bnl243klf43it"
+path="res://.godot/imported/Tomb32x32.png-778e8c336602aae9af6399abb28edef9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levers.png"
-dest_files=["res://.godot/imported/Levers.png-84fda002ee21545824dd49f64115d893.ctex"]
+source_file="res://Assets/Tilesets/Tomb32x32.png"
+dest_files=["res://.godot/imported/Tomb32x32.png-778e8c336602aae9af6399abb28edef9.ctex"]
 
 [params]
 
