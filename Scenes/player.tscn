@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b44gnh2ovgty1" path="res://Assets/Ghost Pack/Ghost_32x32_Front_Flying.png" id="4_fkybt"]
 [ext_resource type="Texture2D" uid="uid://d4dla1lsbu3ki" path="res://Assets/Ghost Pack/Ghost_32x32_Left_Flying.png" id="5_x3wgy"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
+radius = 19.557608
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(19, 21)
 
@@ -267,7 +270,16 @@ animations = [{
 z_index = 5
 script = ExtResource("1_cvnsp")
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=652480721]
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=694370707]
+collision_layer = 0
+collision_mask = 2
+
+[node name="InteractionCollision" type="CollisionShape2D" parent="InteractionDetector" unique_id=1149765088]
+position = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_fkybt")
+debug_color = Color(0.07170061, 0.3094943, 1, 0.41960785)
+
+[node name="PlayerPhysicsCollision" type="CollisionShape2D" parent="." unique_id=652480721]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_vgqql")
 
@@ -285,3 +297,6 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_ukyrk")
 animation = &"left_flying"
 autoplay = "front_flying"
+
+[connection signal="area_entered" from="InteractionDetector" to="." method="_on_interaction_detector_area_entered"]
+[connection signal="area_exited" from="InteractionDetector" to="." method="_on_interaction_detector_area_exited"]

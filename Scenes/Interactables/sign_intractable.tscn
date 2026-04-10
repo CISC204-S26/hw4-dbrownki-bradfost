@@ -1,16 +1,22 @@
 [gd_scene format=3 uid="uid://cqjf3bl2fbnsx"]
 
-[ext_resource type="Script" uid="uid://uvv4u3lsh0oo" path="res://Scripts/interactable.gd" id="1_pqgft"]
+[ext_resource type="Script" uid="uid://c4igsp4il3287" path="res://Scenes/Interactables/sign_intractable.gd" id="1_74t3n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghqkm"]
-radius = 14.0
+radius = 24.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_wyuoi"]
 
 [node name="SignIntractable" type="Area2D" unique_id=993458865]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_pqgft")
+script = ExtResource("1_74t3n")
 metadata/_custom_type_script = "uid://uvv4u3lsh0oo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1717283165]
 shape = SubResource("CircleShape2D_ghqkm")
 debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=299004293]
+scale = Vector2(8, 8)
+mesh = SubResource("QuadMesh_wyuoi")

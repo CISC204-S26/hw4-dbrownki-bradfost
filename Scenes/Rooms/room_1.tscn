@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_3t5sg"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_gjyih"]
 [ext_resource type="Texture2D" uid="uid://lw8sie6exg0o" path="res://Assets/Tilesets/32x32DungeonDoor.png" id="3_8tcee"]
+[ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_intractable.tscn" id="4_476il"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
 texture = ExtResource("1_3t5sg")
@@ -183,3 +184,8 @@ tile_set = SubResource("TileSet_i0xkx")
 
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_gjyih")]
 position = Vector2(146, 227)
+collision_mask = 3
+
+[node name="SignIntractable" parent="." unique_id=993458865 instance=ExtResource("4_476il")]
+z_index = 1
+position = Vector2(143, 175)
