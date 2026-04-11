@@ -6,9 +6,14 @@ var direction: Vector2
 
 @export var nearby_interactables = []
 
+var canMove = true
+
 func _physics_process(_delta: float) -> void:
-	direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
-	velocity = direction * speed
+	if canMove:
+		direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
+		velocity = direction * speed
+	else:
+		velocity = Vector2(0, 0)
 	animations()
 	
 	if Input.is_action_just_pressed("interact"):
@@ -39,3 +44,10 @@ func _on_interaction_detector_area_entered(area: Area2D) -> void:
 func _on_interaction_detector_area_exited(area: Area2D) -> void:
 	print("Interactable Removed")
 	nearby_interactables.erase(area)
+
+
+func _on_entered_talking() -> void:
+	canMove = false
+
+func _on_exited_talking() -> void:
+	canMove = true
