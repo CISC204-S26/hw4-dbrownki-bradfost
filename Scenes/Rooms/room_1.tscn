@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_gjyih"]
 [ext_resource type="Texture2D" uid="uid://lw8sie6exg0o" path="res://Assets/Tilesets/32x32DungeonDoor.png" id="3_8tcee"]
 [ext_resource type="Texture2D" uid="uid://dog3kk28b6a3o" path="res://Assets/Orb.png" id="3_i0xkx"]
-[ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_intractable.tscn" id="4_476il"]
+[ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="4_476il"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scenes/Rooms/talkingScript.gd" id="4_ba2wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
@@ -229,29 +229,11 @@ zoom = Vector2(4, 4)
 limit_left = 0
 limit_top = 0
 
-[node name="TextContainer" type="ColorRect" parent="Player/Camera2D" unique_id=215167499]
-z_index = 2
-offset_left = -138.0
-offset_top = 45.0
-offset_right = 134.0
-offset_bottom = 77.0
-color = Color(0.19607843, 0.19607843, 0.19607843, 0.78431374)
-script = ExtResource("4_ba2wq")
-
-[node name="TalkText" type="RichTextLabel" parent="Player/Camera2D/TextContainer" unique_id=592200843]
-layout_mode = 0
-offset_right = 272.0
-offset_bottom = 32.0
-theme_override_font_sizes/normal_font_size = 10
-text = "Some Text"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SignIntractable" parent="." unique_id=993458865 instance=ExtResource("4_476il")]
+[node name="SignInteractable" parent="." unique_id=993458865 instance=ExtResource("4_476il")]
 position = Vector2(143, 175)
 text = ["Hi!", "This is some dummy text!", "This conversation will end after this line!"]
 
-[node name="SignIntractable2" parent="." unique_id=391022452 instance=ExtResource("4_476il")]
+[node name="SignInteractable2" parent="." unique_id=391022452 instance=ExtResource("4_476il")]
 position = Vector2(80, 248)
 text = ["This is a different sign", "And it has different text!"]
 
@@ -262,13 +244,33 @@ sprite_frames = SubResource("SpriteFrames_0qggq")
 autoplay = "default"
 frame_progress = 0.7727621
 
-[connection signal="enteredTalking" from="SignIntractable" to="Player" method="_on_entered_talking"]
-[connection signal="enteredTalking" from="SignIntractable" to="Player/Camera2D/TextContainer" method="_on_entered_talking"]
-[connection signal="exitedTalking" from="SignIntractable" to="Player" method="_on_exited_talking"]
-[connection signal="exitedTalking" from="SignIntractable" to="Player/Camera2D/TextContainer" method="_on_exited_talking"]
-[connection signal="showText" from="SignIntractable" to="Player/Camera2D/TextContainer" method="_on_show_text"]
-[connection signal="enteredTalking" from="SignIntractable2" to="Player" method="_on_entered_talking"]
-[connection signal="enteredTalking" from="SignIntractable2" to="Player/Camera2D/TextContainer" method="_on_entered_talking"]
-[connection signal="exitedTalking" from="SignIntractable2" to="Player" method="_on_exited_talking"]
-[connection signal="exitedTalking" from="SignIntractable2" to="Player/Camera2D/TextContainer" method="_on_exited_talking"]
-[connection signal="showText" from="SignIntractable2" to="Player/Camera2D/TextContainer" method="_on_show_text"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871433792]
+
+[node name="TextContainer" type="ColorRect" parent="CanvasLayer" unique_id=215167499]
+z_index = 2
+offset_top = 504.0
+offset_right = 1156.0
+offset_bottom = 640.0
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.78431374)
+script = ExtResource("4_ba2wq")
+
+[node name="TalkText" type="RichTextLabel" parent="CanvasLayer/TextContainer" unique_id=592200843]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 136.0
+theme_override_font_sizes/normal_font_size = 45
+text = "Some Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_show_text"]
+[connection signal="enteredTalking" from="SignInteractable2" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="SignInteractable2" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_show_text"]
