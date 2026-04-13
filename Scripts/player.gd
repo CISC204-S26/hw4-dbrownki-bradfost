@@ -51,3 +51,11 @@ func _on_entered_talking() -> void:
 
 func _on_exited_talking() -> void:
 	canMove = true
+
+
+func _on_switch_interacted(toggled: bool) -> void:
+	pass # Replace with function body.
+
+
+func _on_collectible_collected() -> void:
+	Global.orbsCollected += 1

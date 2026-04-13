@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dog3kk28b6a3o" path="res://Assets/Orb.png" id="3_i0xkx"]
 [ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="4_476il"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scenes/Rooms/talkingScript.gd" id="4_ba2wq"]
+[ext_resource type="PackedScene" uid="uid://dd78n2bovx2le" path="res://Scenes/Interactables/switch_interactable.tscn" id="7_3rs20"]
+[ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="8_piptf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
 texture = ExtResource("1_3t5sg")
@@ -241,7 +243,7 @@ text = ["This is a different sign", "And it has different text!"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1618300061]
 z_index = 1
-position = Vector2(198, 271)
+position = Vector2(408, 144)
 sprite_frames = SubResource("SpriteFrames_0qggq")
 autoplay = "default"
 frame_progress = 0.7727621
@@ -266,6 +268,15 @@ text = "Some Text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SwitchIntractable" parent="." unique_id=454805954 instance=ExtResource("7_3rs20")]
+position = Vector2(208, 112)
+
+[node name="SwitchIntractable2" parent="." unique_id=297598597 instance=ExtResource("7_3rs20")]
+position = Vector2(80, 112)
+
+[node name="CollectibleInteractable" parent="." unique_id=661864919 instance=ExtResource("8_piptf")]
+position = Vector2(112, 304)
+
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
 [connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]
@@ -276,3 +287,6 @@ vertical_alignment = 1
 [connection signal="exitedTalking" from="SignInteractable2" to="Player" method="_on_exited_talking"]
 [connection signal="exitedTalking" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
 [connection signal="showText" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_show_text"]
+[connection signal="onSwitchInteracted" from="SwitchIntractable" to="Player" method="_on_switch_interacted"]
+[connection signal="onSwitchInteracted" from="SwitchIntractable2" to="Player" method="_on_switch_interacted"]
+[connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
