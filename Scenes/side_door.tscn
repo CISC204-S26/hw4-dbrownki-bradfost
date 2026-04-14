@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://rpv8tnjp8frx"]
+
+[ext_resource type="Script" uid="uid://bwlse45rmd6nr" path="res://Scripts/side_door.gd" id="1_c0d3o"]
+[ext_resource type="Texture2D" uid="uid://lw8sie6exg0o" path="res://Assets/Tilesets/32x32DungeonDoor.png" id="1_mfv7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0d3o"]
+size = Vector2(5, 24)
+
+[node name="SideDoor" type="Node2D" unique_id=1611242029]
+script = ExtResource("1_c0d3o")
+
+[node name="DoorSprite" type="Sprite2D" parent="." unique_id=63257465]
+texture = ExtResource("1_mfv7q")
+hframes = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2007957611]
+position = Vector2(-0.5, 0)
+
+[node name="DoorCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=1563619577]
+shape = SubResource("RectangleShape2D_c0d3o")
