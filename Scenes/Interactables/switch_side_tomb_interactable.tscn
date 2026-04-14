@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dyc54qhradj0y"]
+
+[ext_resource type="Script" uid="uid://cixgo2kahmv1a" path="res://Scripts/switch_side_tomb_interactable.gd" id="1_0o5aa"]
+[ext_resource type="Texture2D" uid="uid://bnl243klf43it" path="res://Assets/Tilesets/Tomb32x32.png" id="2_eag84"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vs6k1"]
+radius = 24.0
+
+[node name="SwitchSideTombInteractable" type="Area2D" unique_id=2092102697]
+z_index = 1
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_0o5aa")
+metadata/_custom_type_script = "uid://uvv4u3lsh0oo"
+
+[node name="LeftTombClosed" type="Sprite2D" parent="." unique_id=177490550]
+texture = ExtResource("2_eag84")
+hframes = 4
+vframes = 2
+
+[node name="LeftTombOpened" type="Sprite2D" parent="." unique_id=1516129904]
+visible = false
+z_index = 1
+texture = ExtResource("2_eag84")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="InteractableCollider" type="CollisionShape2D" parent="." unique_id=1301219429]
+shape = SubResource("CircleShape2D_vs6k1")
+debug_color = Color(1, 1, 0, 0.41960785)
