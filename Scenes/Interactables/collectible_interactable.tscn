@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6n2il0p3jrj7"]
 
-[ext_resource type="Script" uid="uid://qjjxkpxdj8y0" path="res://Scenes/Interactables/collectible_interactable.gd" id="1_s8whp"]
+[ext_resource type="Script" uid="uid://qjjxkpxdj8y0" path="res://Scripts/Interactables/collectible_interactable.gd" id="1_s8whp"]
 [ext_resource type="Texture2D" uid="uid://dog3kk28b6a3o" path="res://Assets/Orb.png" id="2_ustmg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghqkm"]

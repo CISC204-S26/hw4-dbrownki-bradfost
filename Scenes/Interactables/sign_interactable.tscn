@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqjf3bl2fbnsx"]
 
-[ext_resource type="Script" uid="uid://c4igsp4il3287" path="res://Scenes/Interactables/sign_interactable.gd" id="1_74t3n"]
+[ext_resource type="Script" uid="uid://c4igsp4il3287" path="res://Scripts/Interactables/sign_interactable.gd" id="1_74t3n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghqkm"]
 radius = 24.0
