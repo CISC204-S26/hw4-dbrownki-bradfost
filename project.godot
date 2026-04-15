@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CISC204 Paired Project: Gone Home"
-run/main_scene="uid://tx0044ga1l47"
+run/main_scene="uid://gw2l28jtpqqo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
