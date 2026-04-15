@@ -4,10 +4,10 @@ extends Interactable
 signal onSwitchInteracted(toggled: bool)
 
 func interact():
-	onSwitchInteracted.emit(toggled)
 	if toggled == false:
 		toggled = true
 		print("Switched ON")
 	else:
 		toggled = false
 		print("Switched OFF")
+	onSwitchInteracted.emit(toggled)

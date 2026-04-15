@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cldmhgorkkwxa"]
+[gd_scene format=3 uid="uid://xwtluytum3tq"]
 
 [ext_resource type="Script" uid="uid://c5ij61d8ttq8a" path="res://Scripts/Interactables/tomb_interactable.gd" id="1_4ag6i"]
 [ext_resource type="Texture2D" uid="uid://bnl243klf43it" path="res://Assets/Tilesets/Tomb32x32.png" id="2_qgab2"]

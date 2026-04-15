@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dyc54qhradj0y"]
+[gd_scene format=3 uid="uid://dl4xwxoo1rpcf"]
 
 [ext_resource type="Script" uid="uid://cixgo2kahmv1a" path="res://Scripts/Interactables/switch_side_tomb_interactable.gd" id="1_0o5aa"]
 [ext_resource type="Texture2D" uid="uid://bnl243klf43it" path="res://Assets/Tilesets/Tomb32x32.png" id="2_eag84"]
@@ -6,11 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vs6k1"]
 radius = 24.0
 
-[node name="SwitchSideTombInteractable" type="Area2D" unique_id=2092102697]
+[node name="SwitchSideTombInteractable" type="Area2D" unique_id=2092102697 node_paths=PackedStringArray("hiddenElement")]
 z_index = 1
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_0o5aa")
+hiddenElement = NodePath("")
 metadata/_custom_type_script = "uid://uvv4u3lsh0oo"
 
 [node name="LeftTombClosed" type="Sprite2D" parent="." unique_id=177490550]

@@ -9,6 +9,7 @@ func interact():
 		opened = true
 		$LeftTombClosed.visible = false
 		$LeftTombOpened.visible = true
+		$InteractableCollider.queue_free()
 		print("Tomb Opened")
 	else:
 		pass

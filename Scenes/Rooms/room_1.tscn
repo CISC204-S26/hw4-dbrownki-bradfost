@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="4_ba2wq"]
 [ext_resource type="PackedScene" uid="uid://dd78n2bovx2le" path="res://Scenes/Interactables/switch_interactable.tscn" id="7_3rs20"]
 [ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="8_piptf"]
-[ext_resource type="PackedScene" uid="uid://cldmhgorkkwxa" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="9_0qggq"]
-[ext_resource type="PackedScene" uid="uid://dyc54qhradj0y" path="res://Scenes/Interactables/switch_side_tomb_interactable.tscn" id="10_7rrix"]
-[ext_resource type="PackedScene" uid="uid://rpv8tnjp8frx" path="res://Scenes/side_door.tscn" id="10_evxbx"]
+[ext_resource type="PackedScene" uid="uid://xwtluytum3tq" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="9_0qggq"]
+[ext_resource type="PackedScene" uid="uid://dl4xwxoo1rpcf" path="res://Scenes/Interactables/switch_side_tomb_interactable.tscn" id="10_7rrix"]
+[ext_resource type="PackedScene" path="res://Scenes/side_door.tscn" id="10_evxbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
 texture = ExtResource("1_3t5sg")
@@ -221,11 +221,11 @@ limit_right = 288
 limit_bottom = 416
 
 [node name="SignInteractable" parent="." unique_id=993458865 instance=ExtResource("4_476il")]
-position = Vector2(143, 175)
+position = Vector2(208, 224)
 text = ["Hi!", "This is some dummy text!", "This conversation will end after this line!"]
 
 [node name="SignInteractable2" parent="." unique_id=391022452 instance=ExtResource("4_476il")]
-position = Vector2(80, 248)
+position = Vector2(80, 224)
 text = ["This is a different sign", "And it has different text!"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1618300061]
@@ -239,9 +239,9 @@ frame_progress = 0.7727621
 
 [node name="TextContainer" type="ColorRect" parent="CanvasLayer" unique_id=215167499]
 z_index = 2
-offset_top = 504.0
+offset_top = 506.0
 offset_right = 1156.0
-offset_bottom = 640.0
+offset_bottom = 642.0
 color = Color(0.19607843, 0.19607843, 0.19607843, 0.78431374)
 script = ExtResource("4_ba2wq")
 
@@ -262,14 +262,26 @@ position = Vector2(208, 112)
 position = Vector2(80, 112)
 
 [node name="CollectibleInteractable" parent="." unique_id=661864919 instance=ExtResource("8_piptf")]
-position = Vector2(112, 304)
+position = Vector2(-40, 264)
 
 [node name="Tomb_Interactable" parent="." unique_id=2092102697 instance=ExtResource("9_0qggq")]
 z_index = 1
-position = Vector2(79, 171)
+position = Vector2(80, 176)
 
-[node name="SwitchSideTombInteractable" parent="." unique_id=1227094181 instance=ExtResource("10_7rrix")]
-position = Vector2(209, 178)
+[node name="HiddenSideTombInteractable" parent="." unique_id=1227094181 node_paths=PackedStringArray("doorToOpen", "hiddenElement") instance=ExtResource("10_7rrix")]
+position = Vector2(208, 176)
+doorToOpen = NodePath("../DungeonDoors/SideDoor2")
+hiddenElement = NodePath("SwitchInteractable2")
+
+[node name="SwitchInteractable2" parent="HiddenSideTombInteractable" unique_id=450423779 instance=ExtResource("7_3rs20")]
+position = Vector2(-8, 0)
+
+[node name="HiddenSideTombInteractable2" parent="." unique_id=830321286 node_paths=PackedStringArray("hiddenElement") instance=ExtResource("10_7rrix")]
+position = Vector2(208, 304)
+hiddenElement = NodePath("SignInteractable3")
+
+[node name="SignInteractable3" parent="HiddenSideTombInteractable2" unique_id=680664921 instance=ExtResource("4_476il")]
+text = ["I'm a pile of bones.", "Call me the bone man.", "Because I'm a pile of bones.", "...", "Man, I wish I was still alive."]
 
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
@@ -284,3 +296,9 @@ position = Vector2(209, 178)
 [connection signal="onSwitchInteracted" from="SwitchIntractable" to="Player" method="_on_switch_interacted"]
 [connection signal="onSwitchInteracted" from="SwitchIntractable2" to="Player" method="_on_switch_interacted"]
 [connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
+[connection signal="onSwitchInteracted" from="HiddenSideTombInteractable/SwitchInteractable2" to="HiddenSideTombInteractable" method="_on_tomb_switch_interacted"]
+[connection signal="enteredTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="HiddenSideTombInteractable2/SignInteractable3" to="CanvasLayer/TextContainer" method="_on_show_text"]
