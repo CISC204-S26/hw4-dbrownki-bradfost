@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_6lm0h"]
 [ext_resource type="Texture2D" uid="uid://cwhxwx6u1vd5c" path="res://Assets/Grass.png" id="1_23rsy"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="3_po8fx"]
+[ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="5_vsynf"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="6_m48pa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsynf"]
@@ -230,3 +231,7 @@ offset_left = 272.0
 offset_top = -160.0
 offset_right = 312.0
 offset_bottom = 56.0
+
+[node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("5_vsynf")]
+position = Vector2(144, 8)
+tag = "Room 1"

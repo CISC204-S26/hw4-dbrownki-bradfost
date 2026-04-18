@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://xwtluytum3tq" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="9_0qggq"]
 [ext_resource type="PackedScene" uid="uid://dl4xwxoo1rpcf" path="res://Scenes/Interactables/switch_side_tomb_interactable.tscn" id="10_7rrix"]
 [ext_resource type="PackedScene" path="res://Scenes/side_door.tscn" id="10_evxbx"]
+[ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="11_evxbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
 texture = ExtResource("1_3t5sg")
@@ -198,20 +199,21 @@ animations = [{
 [node name="DungeonTiles" type="TileMapLayer" parent="Tilemaps" unique_id=1957981604]
 z_index = -1
 position = Vector2(0, 96)
-tile_map_data = PackedByteArray("AAABAAgAAAAIAAMAAAACAAgAAAAJAAMAAAADAAgAAAAJAAMAAAAHAAgAAAALAAMAAAAGAAgAAAAJAAMAAAAFAAgAAAAJAAMAAAAEAAgAAAAKAAMAAAABAAcAAAAIAAEAAAABAAYAAAAIAAEAAAABAAUAAAAIAAEAAAABAAQAAAAIAAEAAAABAAMAAAAIAAEAAAABAAIAAAAIAAEAAAAHAAIAAAALAAIAAAAGAAIAAAAJAAIAAAAFAAIAAAAJAAIAAAAEAAIAAAAJAAIAAAADAAIAAAAJAAIAAAACAAIAAAAJAAIAAAAHAAMAAAALAAIAAAAGAAMAAAAKAAEAAAAFAAMAAAAJAAIAAAAEAAMAAAAJAAIAAAADAAMAAAAJAAIAAAACAAMAAAAKAAEAAAAFAAQAAAAJAAIAAAAGAAQAAAAJAAIAAAAHAAQAAAALAAIAAAAEAAQAAAAJAAIAAAADAAQAAAAJAAIAAAACAAQAAAAJAAIAAAACAAUAAAAJAAIAAAADAAUAAAAJAAIAAAAEAAUAAAAJAAIAAAAFAAUAAAAJAAIAAAAGAAUAAAAJAAIAAAAHAAUAAAALAAEAAAACAAYAAAAJAAIAAAADAAYAAAAJAAIAAAAEAAYAAAAJAAIAAAAFAAYAAAAJAAIAAAAGAAYAAAAJAAIAAAAHAAYAAAALAAIAAAACAAcAAAAKAAEAAAADAAcAAAAJAAIAAAAEAAcAAAAJAAIAAAAFAAcAAAAJAAIAAAAGAAcAAAAKAAEAAAAHAAcAAAALAAIAAAAGAP//AAAKAAEAAAACAP//AAAKAAEAAAABAP7/AAAIAAAAAAAHAP7/AAALAAAAAAAEAP7/AAAJAAAAAAAHAAEAAAALAAIAAAAHAAAAAAALAAIAAAAHAP//AAALAAIAAAAGAP7/AAAKAAAAAAAFAP7/AAAKAAAAAAADAP7/AAAKAAAAAAACAP7/AAAKAAAAAAABAP//AAAIAAEAAAABAAAAAAAIAAEAAAABAAEAAAAIAAIAAAACAAEAAAAJAAIAAAACAAAAAAAJAAIAAAADAAAAAAAJAAIAAAAEAAAAAAAJAAIAAAAFAAAAAAAJAAIAAAAGAAAAAAAJAAIAAAAGAAEAAAAJAAIAAAAFAAEAAAAJAAIAAAAEAAEAAAAJAAIAAAADAAEAAAAJAAIAAAADAP//AAAJAAIAAAAEAP//AAAJAAIAAAAFAP//AAAJAAIAAAAIAAgAAAAKAAEAAAAIAAcAAAAKAAEAAAAIAAYAAAAKAAEAAAAIAAkAAAAKAAEAAAAHAAkAAAAKAAEAAAAGAAkAAAAKAAEAAAAFAAkAAAAKAAEAAAADAAkAAAAKAAEAAAACAAkAAAAKAAEAAAABAAkAAAAKAAEAAAAAAAkAAAAKAAEAAAAAAAgAAAAKAAEAAAAAAAcAAAAKAAEAAAAAAAIAAAAKAAEAAAAAAAMAAAAKAAEAAAAAAAQAAAAKAAEAAAAAAAUAAAAKAAEAAAAAAAYAAAAKAAEAAAAAAAAAAAAKAAEAAAAAAP//AAAKAAEAAAAAAP7/AAAKAAEAAAAAAP3/AAAKAAEAAAABAP3/AAAKAAEAAAACAP3/AAAKAAEAAAADAP3/AAAKAAEAAAAFAP3/AAAKAAEAAAAGAP3/AAAKAAEAAAAHAP3/AAAKAAEAAAAIAP3/AAAKAAEAAAAIAP7/AAAKAAEAAAAIAP//AAAKAAEAAAAIAAAAAAAKAAEAAAAIAAEAAAAKAAEAAAAIAAIAAAAKAAEAAAAIAAMAAAAKAAEAAAAIAAQAAAAKAAEAAAAEAAkAAAAAAAEAAAAEAAoAAAAKAAEAAAADAAoAAAAKAAEAAAAFAAoAAAAKAAEAAAAIAAUAAAACAAMAAAAAAAEAAAACAAMAAAAEAP3/AAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAABAAgAAAAIAAMAAAACAAgAAAAJAAMAAAADAAgAAAAJAAMAAAAHAAgAAAALAAMAAAAGAAgAAAAJAAMAAAAFAAgAAAAJAAMAAAAEAAgAAAAKAAMAAAABAAcAAAAIAAEAAAABAAYAAAAIAAEAAAABAAUAAAAIAAEAAAABAAQAAAAIAAEAAAABAAMAAAAIAAEAAAABAAIAAAAIAAEAAAAHAAIAAAALAAIAAAAGAAIAAAAJAAIAAAAFAAIAAAAJAAIAAAAEAAIAAAAJAAIAAAADAAIAAAAJAAIAAAACAAIAAAAJAAIAAAAHAAMAAAALAAIAAAAGAAMAAAAKAAEAAAAFAAMAAAAJAAIAAAAEAAMAAAAJAAIAAAADAAMAAAAJAAIAAAACAAMAAAAKAAEAAAAFAAQAAAAJAAIAAAAGAAQAAAAJAAIAAAAHAAQAAAALAAIAAAAEAAQAAAAJAAIAAAADAAQAAAAJAAIAAAACAAQAAAAJAAIAAAACAAUAAAAJAAIAAAADAAUAAAAJAAIAAAAEAAUAAAAJAAIAAAAFAAUAAAAJAAIAAAAGAAUAAAAJAAIAAAAHAAUAAAALAAEAAAACAAYAAAAJAAIAAAADAAYAAAAJAAIAAAAEAAYAAAAJAAIAAAAFAAYAAAAJAAIAAAAGAAYAAAAJAAIAAAAHAAYAAAALAAIAAAACAAcAAAAKAAEAAAADAAcAAAAJAAIAAAAEAAcAAAAJAAIAAAAFAAcAAAAJAAIAAAAGAAcAAAAKAAEAAAAHAAcAAAALAAIAAAAGAP//AAAKAAEAAAACAP//AAAKAAEAAAABAP7/AAAIAAAAAAAHAP7/AAALAAAAAAAEAP7/AAAJAAAAAAAHAAEAAAALAAIAAAAHAAAAAAALAAIAAAAHAP//AAALAAIAAAAGAP7/AAAKAAAAAAAFAP7/AAAKAAAAAAADAP7/AAAKAAAAAAACAP7/AAAKAAAAAAABAP//AAAIAAEAAAABAAAAAAAIAAEAAAABAAEAAAAIAAIAAAACAAEAAAAJAAIAAAACAAAAAAAJAAIAAAADAAAAAAAJAAIAAAAEAAAAAAAJAAIAAAAFAAAAAAAJAAIAAAAGAAAAAAAJAAIAAAAGAAEAAAAJAAIAAAAFAAEAAAAJAAIAAAAEAAEAAAAJAAIAAAADAAEAAAAJAAIAAAADAP//AAAJAAIAAAAEAP//AAAJAAIAAAAFAP//AAAJAAIAAAAIAAgAAAAKAAEAAAAIAAcAAAAKAAEAAAAIAAYAAAAKAAEAAAAIAAkAAAAKAAEAAAAHAAkAAAAKAAEAAAAGAAkAAAAKAAEAAAAFAAkAAAAKAAEAAAADAAkAAAAKAAEAAAACAAkAAAAKAAEAAAABAAkAAAAKAAEAAAAAAAkAAAAKAAEAAAAAAAgAAAAKAAEAAAAAAAcAAAAKAAEAAAAAAAIAAAAKAAEAAAAAAAMAAAAKAAEAAAAAAAQAAAAKAAEAAAAAAAUAAAAKAAEAAAAAAAYAAAAKAAEAAAAAAAAAAAAKAAEAAAAAAP//AAAKAAEAAAAAAP7/AAAKAAEAAAAAAP3/AAAKAAEAAAABAP3/AAAKAAEAAAACAP3/AAAKAAEAAAADAP3/AAAKAAEAAAAFAP3/AAAKAAEAAAAGAP3/AAAKAAEAAAAHAP3/AAAKAAEAAAAIAP3/AAAKAAEAAAAIAP7/AAAKAAEAAAAIAP//AAAKAAEAAAAIAAAAAAAKAAEAAAAIAAEAAAAKAAEAAAAIAAIAAAAKAAEAAAAIAAMAAAAKAAEAAAAIAAQAAAAKAAEAAAAEAAkAAAAAAAEAAAAEAAoAAAAKAAEAAAADAAoAAAAKAAEAAAAFAAoAAAAKAAEAAAAIAAUAAAACAAMAAAAAAAEAAAACAAMAAAAEAP3/AAAAAAEAAAD//wAAAAAKAAEAAAD+/wAAAAAKAAEAAAD//wIAAAAKAAEAAAD+/wIAAAAKAAEAAAD+/wEAAAAKAAEAAAAJAAQAAAAKAAEAAAAKAAQAAAAKAAEAAAAKAAUAAAAKAAEAAAAKAAYAAAAKAAEAAAAJAAYAAAAKAAEAAAADAPz/AAAKAAEAAAADAPv/AAAKAAEAAAAEAPv/AAAKAAEAAAAFAPv/AAAKAAEAAAAFAPz/AAAKAAEAAAA=")
 tile_set = SubResource("TileSet_is5ow")
 
 [node name="DungeonDoors" type="Node" parent="." unique_id=741530291]
 
 [node name="SideDoor" parent="DungeonDoors" unique_id=1611242029 instance=ExtResource("10_evxbx")]
 position = Vector2(272, 272)
+tag = "Right Door"
 
 [node name="SideDoor2" parent="DungeonDoors" unique_id=701390810 instance=ExtResource("10_evxbx")]
 position = Vector2(16, 144)
+tag = "Left Door"
 
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_gjyih")]
 position = Vector2(143, 399)
-collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1730869655]
 zoom = Vector2(4, 4)
@@ -262,11 +264,35 @@ position = Vector2(208, 112)
 position = Vector2(80, 112)
 
 [node name="CollectibleInteractable" parent="." unique_id=661864919 instance=ExtResource("8_piptf")]
-position = Vector2(-40, 264)
+position = Vector2(144, 256)
 
 [node name="Tomb_Interactable" parent="." unique_id=2092102697 instance=ExtResource("9_0qggq")]
 z_index = 1
 position = Vector2(80, 176)
+
+[node name="Tomb_Interactable2" parent="." unique_id=581366005 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(80, 280)
+
+[node name="Tomb_Interactable3" parent="." unique_id=1900359011 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(80, 256)
+
+[node name="Tomb_Interactable4" parent="." unique_id=1240229710 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(208, 280)
+
+[node name="Tomb_Interactable5" parent="." unique_id=302489320 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(208, 256)
+
+[node name="Tomb_Interactable6" parent="." unique_id=1584497333 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(208, 368)
+
+[node name="Tomb_Interactable7" parent="." unique_id=576417574 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(80, 368)
 
 [node name="HiddenSideTombInteractable" parent="." unique_id=1227094181 node_paths=PackedStringArray("doorToOpen", "hiddenElement") instance=ExtResource("10_7rrix")]
 position = Vector2(208, 176)
@@ -276,6 +302,14 @@ hiddenElement = NodePath("SwitchInteractable2")
 [node name="SwitchInteractable2" parent="HiddenSideTombInteractable" unique_id=450423779 instance=ExtResource("7_3rs20")]
 position = Vector2(-8, 0)
 
+[node name="HiddenSideTombInteractable3" parent="." unique_id=1295302588 node_paths=PackedStringArray("doorToOpen", "hiddenElement") instance=ExtResource("10_7rrix")]
+position = Vector2(80, 304)
+doorToOpen = NodePath("../DungeonDoors/SideDoor")
+hiddenElement = NodePath("SwitchInteractable2")
+
+[node name="SwitchInteractable2" parent="HiddenSideTombInteractable3" unique_id=618023244 instance=ExtResource("7_3rs20")]
+position = Vector2(-8, 0)
+
 [node name="HiddenSideTombInteractable2" parent="." unique_id=830321286 node_paths=PackedStringArray("hiddenElement") instance=ExtResource("10_7rrix")]
 position = Vector2(208, 304)
 hiddenElement = NodePath("SignInteractable3")
@@ -283,6 +317,19 @@ hiddenElement = NodePath("SignInteractable3")
 [node name="SignInteractable3" parent="HiddenSideTombInteractable2" unique_id=680664921 instance=ExtResource("4_476il")]
 text = ["I'm a pile of bones.", "Call me the bone man.", "Because I'm a pile of bones.", "...", "Man, I wish I was still alive."]
 
+[node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("11_evxbx")]
+position = Vector2(-24, 144)
+tag = "Room 2"
+
+[node name="Collidable2" parent="." unique_id=54642334 instance=ExtResource("11_evxbx")]
+position = Vector2(312, 272)
+tag = "Room 3"
+
+[node name="Collidable3" parent="." unique_id=1456319689 instance=ExtResource("11_evxbx")]
+position = Vector2(144, -24)
+tag = "Room 4"
+
+[connection signal="ready" from="Player" to="Player" method="_on_ready"]
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
 [connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]
@@ -297,6 +344,7 @@ text = ["I'm a pile of bones.", "Call me the bone man.", "Because I'm a pile of 
 [connection signal="onSwitchInteracted" from="SwitchIntractable2" to="Player" method="_on_switch_interacted"]
 [connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
 [connection signal="onSwitchInteracted" from="HiddenSideTombInteractable/SwitchInteractable2" to="HiddenSideTombInteractable" method="_on_tomb_switch_interacted"]
+[connection signal="onSwitchInteracted" from="HiddenSideTombInteractable3/SwitchInteractable2" to="HiddenSideTombInteractable3" method="_on_tomb_switch_interacted"]
 [connection signal="enteredTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
 [connection signal="exitedTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="Player" method="_on_exited_talking"]

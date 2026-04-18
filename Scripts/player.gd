@@ -8,6 +8,17 @@ var direction: Vector2
 
 var canMove = true
 
+func _ready() -> void:
+	if Global.player_left_room2:
+		position.x = 8
+		position.y = 144
+	if Global.player_left_room3:
+		position.x = 272
+		position.y = 272
+	Global.player_left_room2 = false
+	Global.player_left_room3 = false
+
+
 func _physics_process(_delta: float) -> void:
 	if canMove:
 		direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
@@ -59,3 +70,19 @@ func _on_switch_interacted(toggled: bool) -> void:
 
 func _on_collectible_collected() -> void:
 	Global.orbsCollected += 1
+
+func _on_collidable_detector_area_entered(area: Area2D) -> void:
+	match area.tag:
+		"Room 1":
+			match get_tree().current_scene:
+				Global.room2:
+					Global.player_left_room2 = true
+				Global.room3:
+					Global.player_left_room3 = true
+			get_tree().change_scene_to_file("res://Scenes/Rooms/room_1.tscn")
+		"Room 2":
+			get_tree().change_scene_to_file("res://Scenes/Rooms/room_2.tscn")
+		"Room 3":
+			get_tree().change_scene_to_file("res://Scenes/Rooms/room_3.tscn")
+		"Room 4":
+			get_tree().change_scene_to_file("res://Scenes/Rooms/room_4.tscn")

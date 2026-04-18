@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bsp2hl5i3x21k"]
+
+[ext_resource type="Script" uid="uid://clp5jgwkivk5p" path="res://Scripts/collidable.gd" id="1_6qjmw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_280vb"]
+size = Vector2(16, 16)
+
+[node name="Collidable" type="Area2D" unique_id=1032584171]
+collision_layer = 4
+script = ExtResource("1_6qjmw")
+
+[node name="CollisionZone" type="CollisionShape2D" parent="." unique_id=463480277]
+shape = SubResource("RectangleShape2D_280vb")
