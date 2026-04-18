@@ -6,6 +6,23 @@ signal enteredTalking
 signal exitedTalking
 signal showText(text: String)
 
+
+func _ready() -> void:
+	$GoldSkull.hide()
+	$GoldBone.hide()
+	$GoldSansSkull.hide()
+	$PixelBone.hide()
+	$PixelSkull.hide()
+	print(randi_range(0, 10))
+	if randi_range(0, 10) == 10:
+		$GoldSkull.show()
+		$GoldBone.show()
+		if randi_range(0, 10) == 10:
+			$GoldSansSkull.show()
+	else:
+		$PixelBone.show()
+		$PixelSkull.show()
+	
 func interact():
 	if index == text.size():
 		exitedTalking.emit()

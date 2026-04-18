@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cqjf3bl2fbnsx"]
 
 [ext_resource type="Script" uid="uid://c4igsp4il3287" path="res://Scripts/Interactables/sign_interactable.gd" id="1_74t3n"]
+[ext_resource type="Texture2D" uid="uid://bns0u3fb2whfg" path="res://Assets/Skulls and Bones/PixelBone.png" id="2_0f6n6"]
+[ext_resource type="Texture2D" uid="uid://cdjrkpu822alj" path="res://Assets/Skulls and Bones/PixelSkull.png" id="3_4viky"]
+[ext_resource type="Texture2D" uid="uid://cj8gegw6wilxu" path="res://Assets/Skulls and Bones/GoldSkull.png" id="4_rg560"]
+[ext_resource type="Texture2D" uid="uid://gg6cohp5snq8" path="res://Assets/Skulls and Bones/GoldSansSkull.png" id="5_tx4ff"]
+[ext_resource type="Texture2D" uid="uid://c0napuiuvlakl" path="res://Assets/Skulls and Bones/GoldBone.png" id="6_jss8o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghqkm"]
 radius = 24.0
@@ -21,3 +26,27 @@ debug_color = Color(0, 1, 0, 0.41960785)
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=299004293]
 scale = Vector2(8, 8)
 mesh = SubResource("QuadMesh_wyuoi")
+
+[node name="GoldSansSkull" type="Sprite2D" parent="." unique_id=518685096]
+z_index = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_tx4ff")
+
+[node name="GoldSkull" type="Sprite2D" parent="." unique_id=1116601055]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_rg560")
+
+[node name="GoldBone" type="Sprite2D" parent="." unique_id=862571877]
+position = Vector2(-5.722046e-06, 4.7683716e-07)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("6_jss8o")
+
+[node name="PixelBone" type="Sprite2D" parent="." unique_id=589278482]
+scale = Vector2(0.62500024, 0.625)
+texture = ExtResource("2_0f6n6")
+
+[node name="PixelSkull" type="Sprite2D" parent="." unique_id=1175673631]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4viky")

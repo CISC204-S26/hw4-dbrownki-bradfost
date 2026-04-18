@@ -1,11 +1,41 @@
 [gd_scene format=3 uid="uid://dd78n2bovx2le"]
 
 [ext_resource type="Script" uid="uid://d163ki50qh5ee" path="res://Scripts/Interactables/switch_interactable.gd" id="1_sgmwa"]
+[ext_resource type="Texture2D" uid="uid://ro1moqkdu402" path="res://Assets/Lever Sprites/LeverH1.png" id="2_ghlbv"]
+[ext_resource type="Texture2D" uid="uid://dcwgxjyf1rnur" path="res://Assets/Lever Sprites/LeverH2.png" id="3_fkvbk"]
+[ext_resource type="Texture2D" uid="uid://bkrlqe1fsxlrr" path="res://Assets/Lever Sprites/LeverV1.png" id="4_vumf6"]
+[ext_resource type="Texture2D" uid="uid://biodecde1iqfc" path="res://Assets/Lever Sprites/LeverV2.png" id="5_yusrb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghqkm"]
 radius = 24.0
 
-[sub_resource type="QuadMesh" id="QuadMesh_wyuoi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghlbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vumf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yusrb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkvbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fkvbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ghlbv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="SwitchInteractable" type="Area2D" unique_id=993458865]
 z_index = 1
@@ -18,6 +48,9 @@ metadata/_custom_type_script = "uid://uvv4u3lsh0oo"
 shape = SubResource("CircleShape2D_ghqkm")
 debug_color = Color(1, 0, 0, 0.41960785)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=299004293]
-scale = Vector2(8, 8)
-mesh = SubResource("QuadMesh_wyuoi")
+[node name="VerticalSprite" type="AnimatedSprite2D" parent="." unique_id=1753338777]
+sprite_frames = SubResource("SpriteFrames_ghlbv")
+
+[node name="HorizontalSprite" type="AnimatedSprite2D" parent="." unique_id=1450209611]
+scale = Vector2(1.0000001, 1)
+sprite_frames = SubResource("SpriteFrames_fkvbk")
