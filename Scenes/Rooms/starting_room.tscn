@@ -3,9 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_6lm0h"]
 [ext_resource type="Texture2D" uid="uid://cwhxwx6u1vd5c" path="res://Assets/Grass.png" id="1_23rsy"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="3_po8fx"]
-[ext_resource type="PackedScene" uid="uid://c0xd0g245xsfc" path="res://Scenes/change_scene.tscn" id="5_2f642"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="6_m48pa"]
-[ext_resource type="PackedScene" uid="uid://tx0044ga1l47" path="res://Scenes/Rooms/room_1.tscn" id="6_ua26k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsynf"]
 texture = ExtResource("1_23rsy")
@@ -187,10 +185,6 @@ tile_set = SubResource("TileSet_is5ow")
 z_index = -1
 position = Vector2(0, 96)
 tile_set = SubResource("TileSet_ua26k")
-
-[node name="ChangeScene" parent="Tilemaps" unique_id=1374681766 instance=ExtResource("5_2f642")]
-position = Vector2(145, 13)
-entering_scene = ExtResource("6_ua26k")
 
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("3_po8fx")]
 position = Vector2(143, 399)

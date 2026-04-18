@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_e4ips"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_v3nlv"]
-[ext_resource type="PackedScene" uid="uid://c0xd0g245xsfc" path="res://Scenes/change_scene.tscn" id="3_133uf"]
-[ext_resource type="PackedScene" uid="uid://tx0044ga1l47" path="res://Scenes/Rooms/room_1.tscn" id="4_on05m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_e4ips")
@@ -165,7 +163,3 @@ limit_left = 0
 limit_top = 0
 limit_right = 352
 limit_bottom = 288
-
-[node name="ChangeScene" parent="." unique_id=1374681766 instance=ExtResource("3_133uf")]
-position = Vector2(342, 144)
-entering_scene = ExtResource("4_on05m")
