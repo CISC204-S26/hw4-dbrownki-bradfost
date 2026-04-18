@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_1aiob"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_6jf2g"]
+[ext_resource type="PackedScene" uid="uid://c0xd0g245xsfc" path="res://Scenes/change_scene.tscn" id="3_h2y7o"]
+[ext_resource type="PackedScene" uid="uid://tx0044ga1l47" path="res://Scenes/Rooms/room_1.tscn" id="4_d242u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_1aiob")
@@ -154,7 +156,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAKAAEAAAABAAAAAAAKAAEAAAACAAAAAAAKAAE
 tile_set = SubResource("TileSet_b204x")
 
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_6jf2g")]
-position = Vector2(17, 207)
+position = Vector2(50, 207)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2023190150]
 zoom = Vector2(5, 5)
@@ -162,3 +164,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 384
 limit_bottom = 320
+
+[node name="ChangeScene" parent="." unique_id=1374681766 instance=ExtResource("3_h2y7o")]
+position = Vector2(14, 208)
+entering_scene = ExtResource("4_d242u")

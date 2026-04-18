@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="8_piptf"]
 [ext_resource type="PackedScene" uid="uid://xwtluytum3tq" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="9_0qggq"]
 [ext_resource type="PackedScene" uid="uid://dl4xwxoo1rpcf" path="res://Scenes/Interactables/switch_side_tomb_interactable.tscn" id="10_7rrix"]
-[ext_resource type="PackedScene" path="res://Scenes/side_door.tscn" id="10_evxbx"]
+[ext_resource type="PackedScene" uid="uid://rpv8tnjp8frx" path="res://Scenes/side_door.tscn" id="10_evxbx"]
+[ext_resource type="PackedScene" uid="uid://c0xd0g245xsfc" path="res://Scenes/change_scene.tscn" id="11_cgbdl"]
+[ext_resource type="PackedScene" uid="uid://crfi04s0skr7f" path="res://Scenes/Rooms/room_3.tscn" id="12_1rkx2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
 texture = ExtResource("1_3t5sg")
@@ -282,6 +284,13 @@ hiddenElement = NodePath("SignInteractable3")
 
 [node name="SignInteractable3" parent="HiddenSideTombInteractable2" unique_id=680664921 instance=ExtResource("4_476il")]
 text = ["I'm a pile of bones.", "Call me the bone man.", "Because I'm a pile of bones.", "...", "Man, I wish I was still alive."]
+
+[node name="ChangeScene" parent="." unique_id=1374681766 instance=ExtResource("11_cgbdl")]
+position = Vector2(283, 272)
+entering_scene = ExtResource("12_1rkx2")
+
+[node name="ChangeScene2" parent="." unique_id=1364359577 instance=ExtResource("11_cgbdl")]
+position = Vector2(4, 145)
 
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
