@@ -63,9 +63,9 @@ func _on_entered_talking() -> void:
 func _on_exited_talking() -> void:
 	canMove = true
 
-
-func _on_switch_interacted(toggled: bool) -> void:
-	pass # Replace with function body.
+#
+#func _on_switch_interacted(toggled: bool) -> void:
+	#pass # Replace with function body.
 
 
 func _on_collectible_collected() -> void:
@@ -79,10 +79,10 @@ func _on_collidable_detector_area_entered(area: Area2D) -> void:
 					Global.player_left_room2 = true
 				Global.room3:
 					Global.player_left_room3 = true
-			get_tree().change_scene_to_file("res://Scenes/Rooms/room_1.tscn")
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Rooms/room_1.tscn")
 		"Room 2":
-			get_tree().change_scene_to_file("res://Scenes/Rooms/room_2.tscn")
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Rooms/room_2.tscn")
 		"Room 3":
-			get_tree().change_scene_to_file("res://Scenes/Rooms/room_3.tscn")
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Rooms/room_3.tscn")
 		"Room 4":
-			get_tree().change_scene_to_file("res://Scenes/Rooms/room_4.tscn")
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Rooms/room_4.tscn")

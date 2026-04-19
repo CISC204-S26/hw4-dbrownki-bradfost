@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://qjjxkpxdj8y0" path="res://Scripts/Interactables/collectible_interactable.gd" id="1_s8whp"]
 [ext_resource type="Texture2D" uid="uid://dog3kk28b6a3o" path="res://Assets/Orb.png" id="2_ustmg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ghqkm"]
-radius = 24.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_i0xkx"]
 atlas = ExtResource("2_ustmg")
 region = Rect2(0, 0, 32, 32)
@@ -42,6 +39,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghqkm"]
+radius = 24.0
+
 [node name="CollectibleInteractable" type="Area2D" unique_id=993458865]
 z_index = 1
 collision_layer = 2
@@ -49,11 +49,12 @@ collision_mask = 0
 script = ExtResource("1_s8whp")
 metadata/_custom_type_script = "uid://uvv4u3lsh0oo"
 
-[node name="InteractableCollider" type="CollisionShape2D" parent="." unique_id=1717283165]
-shape = SubResource("CircleShape2D_ghqkm")
-debug_color = Color(0, 0, 1, 0.41960785)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="InteractableCollider" unique_id=380231636]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=380231636]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_bxkk4")
 autoplay = "default"
+
+[node name="InteractableCollider" type="CollisionShape2D" parent="." unique_id=1717283165]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_ghqkm")
+debug_color = Color(0, 0, 1, 0.41960785)

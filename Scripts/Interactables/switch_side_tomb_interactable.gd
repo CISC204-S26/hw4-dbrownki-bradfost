@@ -30,6 +30,6 @@ func _on_tomb_switch_interacted(toggled: bool) -> void:
 		if doorToOpen:
 			if doorToOpen == $"../DungeonDoors/SideDoor2":
 				Global.leftDoorOpen = true
-			if doorToOpen == $"../DungeonDoors/SideDoor":
-				Global.rightDoorOpen = true
+#			if doorToOpen == $"../DungeonDoors/SideDoor":
+#				Global.rightDoorOpen = true
 			doorToOpen.queue_free()

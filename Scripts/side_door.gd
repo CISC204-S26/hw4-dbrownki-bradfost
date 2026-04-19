@@ -11,5 +11,5 @@ func _ready() -> void:
 			if Global.rightDoorOpen:
 				queue_free()
 
-func _on_switch_interacted(toggled: bool) -> void:
-	self.queue_free()
+#func _on_switch_interacted(toggled: bool) -> void:
+	#self.queue_free()

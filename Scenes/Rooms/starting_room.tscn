@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://gw2l28jtpqqo"]
 
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_6lm0h"]
-[ext_resource type="Texture2D" uid="uid://cwhxwx6u1vd5c" path="res://Assets/Grass.png" id="1_23rsy"]
+[ext_resource type="Texture2D" uid="uid://cwhxwx6u1vd5c" path="res://Assets/Tilesets/Grass.png" id="1_23rsy"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="3_po8fx"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="5_vsynf"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="6_m48pa"]
