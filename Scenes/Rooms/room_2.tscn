@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_e4ips"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_v3nlv"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="3_qqf27"]
+[ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="5_on05m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_e4ips")
@@ -170,3 +171,6 @@ limit_bottom = 288
 [node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("3_qqf27")]
 position = Vector2(360, 144)
 tag = "Room 1"
+
+[node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("5_on05m")]
+position = Vector2(211, 84)

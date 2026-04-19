@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_3t5sg"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_gjyih"]
-[ext_resource type="Texture2D" uid="uid://dog3kk28b6a3o" path="res://Assets/Orb.png" id="3_i0xkx"]
 [ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="4_476il"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="4_ba2wq"]
 [ext_resource type="PackedScene" uid="uid://dd78n2bovx2le" path="res://Scenes/Interactables/switch_interactable.tscn" id="7_3rs20"]
@@ -156,42 +155,6 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0gevy")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i0xkx"]
-atlas = ExtResource("3_i0xkx")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ba2wq"]
-atlas = ExtResource("3_i0xkx")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3rs20"]
-atlas = ExtResource("3_i0xkx")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_piptf"]
-atlas = ExtResource("3_i0xkx")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0qggq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i0xkx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ba2wq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3rs20")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_piptf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
-
 [node name="Room1" type="Node2D" unique_id=897087230]
 
 [node name="Tilemaps" type="Node" parent="." unique_id=375899267]
@@ -212,6 +175,52 @@ tag = "Right Door"
 position = Vector2(16, 144)
 tag = "Left Door"
 
+[node name="EmptyTombInteractables" type="Node" parent="." unique_id=883737604]
+
+[node name="Tomb_Interactable" parent="EmptyTombInteractables" unique_id=2092102697 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(80, 176)
+
+[node name="Tomb_Interactable2" parent="EmptyTombInteractables" unique_id=581366005 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(80, 280)
+
+[node name="Tomb_Interactable3" parent="EmptyTombInteractables" unique_id=1900359011 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(80, 256)
+
+[node name="Tomb_Interactable4" parent="EmptyTombInteractables" unique_id=1240229710 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(208, 280)
+
+[node name="Tomb_Interactable5" parent="EmptyTombInteractables" unique_id=302489320 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(208, 256)
+
+[node name="Tomb_Interactable6" parent="EmptyTombInteractables" unique_id=1584497333 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(208, 368)
+
+[node name="Tomb_Interactable7" parent="EmptyTombInteractables" unique_id=576417574 instance=ExtResource("9_0qggq")]
+z_index = 1
+position = Vector2(80, 368)
+
+[node name="FullTombInteractables" type="Node" parent="." unique_id=1419184788]
+
+[node name="RoomCollidables" type="Node" parent="." unique_id=1034312115]
+
+[node name="Collidable" parent="RoomCollidables" unique_id=1032584171 instance=ExtResource("11_evxbx")]
+position = Vector2(-24, 144)
+tag = "Room 2"
+
+[node name="Collidable2" parent="RoomCollidables" unique_id=54642334 instance=ExtResource("11_evxbx")]
+position = Vector2(312, 272)
+tag = "Room 3"
+
+[node name="Collidable3" parent="RoomCollidables" unique_id=1456319689 instance=ExtResource("11_evxbx")]
+position = Vector2(144, -24)
+tag = "Room 4"
+
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_gjyih")]
 position = Vector2(143, 399)
 
@@ -230,13 +239,6 @@ text = ["Hi!", "This is some dummy text!", "This conversation will end after thi
 position = Vector2(80, 224)
 scale = Vector2(-1, 1)
 text = ["This is a different sign", "And it has different text!"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1618300061]
-z_index = 1
-position = Vector2(408, 144)
-sprite_frames = SubResource("SpriteFrames_0qggq")
-autoplay = "default"
-frame_progress = 0.7727621
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871433792]
 
@@ -258,44 +260,8 @@ text = "Some Text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SwitchIntractable" parent="." unique_id=454805954 instance=ExtResource("7_3rs20")]
-position = Vector2(208, 112)
-vertical = true
-
-[node name="SwitchIntractable2" parent="." unique_id=297598597 instance=ExtResource("7_3rs20")]
-position = Vector2(80, 112)
-vertical = true
-
 [node name="CollectibleInteractable" parent="." unique_id=661864919 instance=ExtResource("8_piptf")]
-position = Vector2(-72, 248)
-
-[node name="Tomb_Interactable" parent="." unique_id=2092102697 instance=ExtResource("9_0qggq")]
-z_index = 1
-position = Vector2(80, 176)
-
-[node name="Tomb_Interactable2" parent="." unique_id=581366005 instance=ExtResource("9_0qggq")]
-z_index = 1
-position = Vector2(80, 280)
-
-[node name="Tomb_Interactable3" parent="." unique_id=1900359011 instance=ExtResource("9_0qggq")]
-z_index = 1
-position = Vector2(80, 256)
-
-[node name="Tomb_Interactable4" parent="." unique_id=1240229710 instance=ExtResource("9_0qggq")]
-z_index = 1
-position = Vector2(208, 280)
-
-[node name="Tomb_Interactable5" parent="." unique_id=302489320 instance=ExtResource("9_0qggq")]
-z_index = 1
-position = Vector2(208, 256)
-
-[node name="Tomb_Interactable6" parent="." unique_id=1584497333 instance=ExtResource("9_0qggq")]
-z_index = 1
-position = Vector2(208, 368)
-
-[node name="Tomb_Interactable7" parent="." unique_id=576417574 instance=ExtResource("9_0qggq")]
-z_index = 1
-position = Vector2(80, 368)
+position = Vector2(139, 283)
 
 [node name="HiddenSideTombInteractable" parent="." unique_id=1227094181 node_paths=PackedStringArray("doorToOpen", "hiddenElement") instance=ExtResource("10_7rrix")]
 position = Vector2(208, 176)
@@ -320,18 +286,6 @@ hiddenElement = NodePath("SignInteractable3")
 [node name="SignInteractable3" parent="HiddenSideTombInteractable2" unique_id=680664921 instance=ExtResource("4_476il")]
 text = ["I'm a pile of bones.", "Call me the bone man.", "Because I'm a pile of bones.", "...", "Man, I wish I was still alive."]
 
-[node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("11_evxbx")]
-position = Vector2(-24, 144)
-tag = "Room 2"
-
-[node name="Collidable2" parent="." unique_id=54642334 instance=ExtResource("11_evxbx")]
-position = Vector2(312, 272)
-tag = "Room 3"
-
-[node name="Collidable3" parent="." unique_id=1456319689 instance=ExtResource("11_evxbx")]
-position = Vector2(144, -24)
-tag = "Room 4"
-
 [connection signal="ready" from="Player" to="Player" method="_on_ready"]
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
@@ -343,8 +297,6 @@ tag = "Room 4"
 [connection signal="exitedTalking" from="SignInteractable2" to="Player" method="_on_exited_talking"]
 [connection signal="exitedTalking" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
 [connection signal="showText" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_show_text"]
-[connection signal="onSwitchInteracted" from="SwitchIntractable" to="Player" method="_on_switch_interacted"]
-[connection signal="onSwitchInteracted" from="SwitchIntractable2" to="Player" method="_on_switch_interacted"]
 [connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
 [connection signal="onSwitchInteracted" from="HiddenSideTombInteractable/SwitchInteractable2" to="HiddenSideTombInteractable" method="_on_tomb_switch_interacted"]
 [connection signal="onSwitchInteracted" from="HiddenSideTombInteractable3/SwitchInteractable2" to="HiddenSideTombInteractable3" method="_on_tomb_switch_interacted"]

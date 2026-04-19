@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://hfhca1oec5of" path="res://Scripts/room_3.gd" id="1_52rh1"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_6jf2g"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="4_h2y7o"]
+[ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="5_d242u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_1aiob")
@@ -169,3 +170,6 @@ limit_bottom = 320
 [node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("4_h2y7o")]
 position = Vector2(-24, 208)
 tag = "Room 1"
+
+[node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("5_d242u")]
+position = Vector2(152, 107)
