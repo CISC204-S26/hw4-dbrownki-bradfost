@@ -9,10 +9,16 @@ func _ready():
 	$HorizontalSprite.hide()
 	if vertical:
 		$VerticalSprite.show()
-		$VerticalSprite.frame = 0
+		if toggled:
+			$VerticalSprite.frame = 1
+		else:
+			$VerticalSprite.frame = 0
 	else:
 		$HorizontalSprite.show()
-		$HorizontalSprite.frame = 0
+		if toggled:
+			$HorizontalSprite.frame = 1
+		else:
+			$HorizontalSprite.frame = 0
 	
 
 func interact():

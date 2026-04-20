@@ -192,14 +192,17 @@ position = Vector2(80, 256)
 [node name="Tomb_Interactable4" parent="EmptyTombInteractables" unique_id=1240229710 instance=ExtResource("9_0qggq")]
 z_index = 1
 position = Vector2(208, 280)
+rightup = true
 
 [node name="Tomb_Interactable5" parent="EmptyTombInteractables" unique_id=302489320 instance=ExtResource("9_0qggq")]
 z_index = 1
 position = Vector2(208, 256)
+rightup = true
 
 [node name="Tomb_Interactable6" parent="EmptyTombInteractables" unique_id=1584497333 instance=ExtResource("9_0qggq")]
 z_index = 1
 position = Vector2(208, 368)
+rightup = true
 
 [node name="Tomb_Interactable7" parent="EmptyTombInteractables" unique_id=576417574 instance=ExtResource("9_0qggq")]
 z_index = 1
@@ -233,12 +236,10 @@ limit_bottom = 416
 
 [node name="SignInteractable" parent="." unique_id=993458865 instance=ExtResource("4_476il")]
 position = Vector2(208, 224)
-text = ["Hi!", "This is some dummy text!", "This conversation will end after this line!"]
 
 [node name="SignInteractable2" parent="." unique_id=391022452 instance=ExtResource("4_476il")]
 position = Vector2(144, 422)
 scale = Vector2(-1, 1)
-text = ["Are you trying turn back now?", "Myaah! YOU FOOL"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871433792]
 
@@ -267,6 +268,7 @@ position = Vector2(139, 283)
 
 [node name="HiddenSideTombInteractable" parent="." unique_id=1227094181 node_paths=PackedStringArray("doorToOpen", "hiddenElement") instance=ExtResource("10_7rrix")]
 position = Vector2(208, 176)
+rightup = true
 doorToOpen = NodePath("../DungeonDoors/SideDoor2")
 hiddenElement = NodePath("SwitchInteractable2")
 
@@ -283,10 +285,10 @@ position = Vector2(0, -2)
 
 [node name="HiddenSideTombInteractable2" parent="." unique_id=830321286 node_paths=PackedStringArray("hiddenElement") instance=ExtResource("10_7rrix")]
 position = Vector2(208, 304)
+rightup = true
 hiddenElement = NodePath("SignInteractable3")
 
 [node name="SignInteractable3" parent="HiddenSideTombInteractable2" unique_id=680664921 instance=ExtResource("4_476il")]
-text = ["I'm a pile of bones.", "Call me the bone man.", "Because I'm a pile of bones.", "...", "Man, I wish I was still alive."]
 
 [connection signal="ready" from="Player" to="Player" method="_on_ready"]
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]

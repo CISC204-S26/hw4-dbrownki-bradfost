@@ -10,6 +10,9 @@ func _ready() -> void:
 		"Right Door":
 			if Global.rightDoorOpen:
 				queue_free()
+		"Room 3 Door":
+			if Global.switchPuzzleSolved:
+				queue_free()
 
 #func _on_switch_interacted(toggled: bool) -> void:
 	#self.queue_free()

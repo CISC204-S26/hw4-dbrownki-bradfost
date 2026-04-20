@@ -7,5 +7,6 @@ var mainDoorOpen = false
 
 var player_left_room2 = false
 var player_left_room3 = false
+var switchPuzzleSolved = false
 var room2
 var room3

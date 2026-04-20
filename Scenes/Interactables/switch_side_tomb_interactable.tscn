@@ -1,10 +1,49 @@
 [gd_scene format=3 uid="uid://dl4xwxoo1rpcf"]
 
 [ext_resource type="Script" uid="uid://cixgo2kahmv1a" path="res://Scripts/Interactables/switch_side_tomb_interactable.gd" id="1_0o5aa"]
-[ext_resource type="Texture2D" uid="uid://bnl243klf43it" path="res://Assets/Tilesets/Tomb32x32.png" id="2_eag84"]
+[ext_resource type="Texture2D" uid="uid://b4n8wav14pvpj" path="res://Assets/Tomb Sprites/TombSprites-1.png.png" id="2_m2x38"]
+[ext_resource type="Texture2D" uid="uid://cs1he72mm2mw8" path="res://Assets/Tomb Sprites/TombSprites-2.png.png" id="3_uamah"]
+[ext_resource type="Texture2D" uid="uid://bo60p2u4ynt6b" path="res://Assets/Tomb Sprites/TombSprites-3.png.png" id="4_oneh3"]
+[ext_resource type="Texture2D" uid="uid://du6keoo3b7fvv" path="res://Assets/Tomb Sprites/TombSprites-4.png.png" id="5_3pkdu"]
+[ext_resource type="Texture2D" uid="uid://dpsfo4jqxw3jr" path="res://Assets/Tomb Sprites/TombSprites-5.png.png" id="6_htj3h"]
+[ext_resource type="Texture2D" uid="uid://7mp7w0nej3v" path="res://Assets/Tomb Sprites/TombSprites-6.png.png" id="7_tnsc8"]
+[ext_resource type="Texture2D" uid="uid://bcqwsi17ldpfw" path="res://Assets/Tomb Sprites/TombSprites-7.png.png" id="8_xx3j1"]
+[ext_resource type="Texture2D" uid="uid://bxkybsnwhssfl" path="res://Assets/Tomb Sprites/TombSprites-8.png.png" id="9_3syih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0o5aa"]
 size = Vector2(32, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ju4g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m2x38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uamah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oneh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3pkdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_htj3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tnsc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xx3j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3syih")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="SwitchSideTombInteractable" type="Area2D" unique_id=2092102697]
 z_index = 1
@@ -13,19 +52,9 @@ collision_mask = 0
 script = ExtResource("1_0o5aa")
 metadata/_custom_type_script = "uid://uvv4u3lsh0oo"
 
-[node name="LeftTombClosed" type="Sprite2D" parent="." unique_id=177490550]
-texture = ExtResource("2_eag84")
-hframes = 4
-vframes = 2
-
-[node name="LeftTombOpened" type="Sprite2D" parent="." unique_id=1516129904]
-visible = false
-z_index = 1
-texture = ExtResource("2_eag84")
-hframes = 4
-vframes = 2
-frame = 1
-
 [node name="InteractableCollider" type="CollisionShape2D" parent="." unique_id=1301219429]
 shape = SubResource("RectangleShape2D_0o5aa")
 debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="TombSprite" type="AnimatedSprite2D" parent="." unique_id=289686955]
+sprite_frames = SubResource("SpriteFrames_6ju4g")

@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="4_h2y7o"]
 [ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="5_d242u"]
 [ext_resource type="PackedScene" uid="uid://dd78n2bovx2le" path="res://Scenes/Interactables/switch_interactable.tscn" id="6_vo8jd"]
+[ext_resource type="PackedScene" uid="uid://rpv8tnjp8frx" path="res://Scenes/side_door.tscn" id="7_pxfjx"]
+[ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="8_gmu0l"]
+[ext_resource type="Texture2D" uid="uid://du6keoo3b7fvv" path="res://Assets/Tomb Sprites/TombSprites-4.png.png" id="9_d6qg6"]
+[ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="10_6sibg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_1aiob")
@@ -151,11 +155,13 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3lycl")
 
-[node name="Room3" type="Node2D" unique_id=436119235]
+[node name="Room3" type="Node2D" unique_id=436119235 node_paths=PackedStringArray("puzzleSwitches", "puzzleDoor")]
 script = ExtResource("1_52rh1")
+puzzleSwitches = NodePath("PuzzleSwitches")
+puzzleDoor = NodePath("SideDoor")
 
 [node name="DungeonTiles" type="TileMapLayer" parent="." unique_id=685220191]
-tile_map_data = PackedByteArray("AAAAAAAAAAAKAAEAAAABAAAAAAAKAAEAAAACAAAAAAAKAAEAAAAAAAEAAAAKAAEAAAADAAAAAAAKAAEAAAAEAAAAAAAKAAEAAAAFAAAAAAAKAAEAAAABAAEAAAAIAAAAAAACAAEAAAAKAAAAAAADAAEAAAAKAAAAAAAEAAEAAAAKAAAAAAAFAAEAAAALAAAAAAABAAIAAAAIAAEAAAABAAMAAAAIAAEAAAAFAAIAAAALAAIAAAAFAAMAAAALAAIAAAAKAAQAAAALAAAAAAAKAAUAAAALAAIAAAAKAAYAAAALAAIAAAAKAAcAAAALAAIAAAAKAAgAAAALAAMAAAAFAAQAAAAGAAEAAAAGAAQAAAAKAAAAAAAHAAQAAAAKAAAAAAAIAAQAAAAKAAAAAAAJAAQAAAAKAAAAAAAJAAgAAAAJAAMAAAAIAAgAAAAJAAMAAAAHAAgAAAAJAAMAAAAGAAgAAAAJAAMAAAAFAAgAAAAJAAMAAAAEAAgAAAAJAAMAAAADAAgAAAAJAAMAAAACAAgAAAAJAAMAAAABAAgAAAAIAAMAAAAAAAYAAAACAAMAAAABAAYAAAAIAAIAAAABAAcAAAAIAAEAAAABAAUAAAAIAAEAAAABAAQAAAAIAAEAAAAAAAIAAAAKAAEAAAAAAAMAAAAKAAEAAAAAAAQAAAAKAAEAAAAAAAUAAAAKAAEAAAAAAAcAAAAKAAEAAAAAAAgAAAAKAAEAAAAAAAkAAAAKAAEAAAABAAkAAAAKAAEAAAACAAkAAAAKAAEAAAADAAkAAAAKAAEAAAAEAAkAAAAKAAEAAAAFAAkAAAAKAAEAAAAGAAkAAAAKAAEAAAAHAAkAAAAKAAEAAAAIAAkAAAAKAAEAAAAJAAkAAAAKAAEAAAAKAAkAAAAKAAEAAAALAAkAAAAKAAEAAAALAAgAAAAKAAEAAAALAAcAAAAKAAEAAAALAAYAAAAKAAEAAAALAAUAAAAKAAEAAAALAAQAAAAKAAEAAAALAAMAAAAKAAEAAAAGAAAAAAAKAAEAAAAGAAEAAAAKAAEAAAAGAAIAAAAKAAEAAAAGAAMAAAAKAAEAAAAHAAMAAAAKAAEAAAAIAAMAAAAKAAEAAAAJAAMAAAAKAAEAAAAKAAMAAAAKAAEAAAAKAAIAAAAKAAEAAAALAAIAAAAKAAEAAAALAAEAAAAKAAEAAAALAAAAAAAKAAEAAAAKAAAAAAAKAAEAAAAJAAAAAAAKAAEAAAAIAAAAAAAKAAEAAAAHAAAAAAAKAAEAAAAHAAEAAAAKAAEAAAAIAAIAAAAKAAEAAAAJAAIAAAAKAAEAAAAJAAEAAAAKAAEAAAAKAAEAAAAKAAEAAAAIAAEAAAAKAAEAAAAHAAIAAAAKAAEAAAACAAIAAAAJAAIAAAADAAIAAAAKAAEAAAAEAAIAAAAJAAIAAAAEAAMAAAAJAAIAAAADAAMAAAAJAAIAAAACAAMAAAAJAAIAAAACAAQAAAAJAAIAAAADAAQAAAAJAAIAAAAEAAQAAAAJAAIAAAACAAUAAAAJAAIAAAACAAYAAAAJAAIAAAADAAYAAAAKAAEAAAAEAAYAAAAJAAIAAAAEAAUAAAAJAAIAAAADAAUAAAAJAAIAAAACAAcAAAAJAAIAAAADAAcAAAAJAAIAAAAEAAcAAAAJAAIAAAAFAAYAAAAJAAIAAAAFAAUAAAAJAAIAAAAGAAUAAAAJAAIAAAAGAAYAAAAJAAIAAAAGAAcAAAAJAAIAAAAFAAcAAAAJAAIAAAAHAAYAAAAJAAIAAAAIAAYAAAAKAAEAAAAIAAUAAAAJAAIAAAAHAAUAAAAJAAIAAAAHAAcAAAAJAAIAAAAJAAYAAAAJAAIAAAAJAAUAAAAJAAIAAAAJAAcAAAAJAAIAAAAIAAcAAAAJAAIAAAD//wUAAAAKAAEAAAD+/wUAAAAKAAEAAAD+/wYAAAAKAAEAAAD+/wcAAAAKAAEAAAD//wcAAAAKAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAKAAEAAAABAAAAAAAKAAEAAAACAAAAAAAKAAEAAAAAAAEAAAAKAAEAAAADAAAAAAAKAAEAAAAEAAAAAAAKAAEAAAAFAAAAAAAKAAEAAAABAAEAAAAIAAAAAAACAAEAAAAKAAAAAAADAAEAAAAKAAAAAAAEAAEAAAAKAAAAAAAFAAEAAAALAAAAAAABAAIAAAAIAAEAAAABAAMAAAAIAAEAAAAFAAIAAAALAAEAAAAFAAMAAAALAAIAAAAKAAQAAAALAAAAAAAKAAUAAAALAAIAAAAKAAYAAAALAAIAAAAKAAcAAAALAAIAAAAKAAgAAAALAAMAAAAFAAQAAAAGAAEAAAAGAAQAAAAKAAAAAAAHAAQAAAAKAAAAAAAIAAQAAAAKAAAAAAAJAAQAAAAKAAAAAAAJAAgAAAAJAAMAAAAIAAgAAAAJAAMAAAAHAAgAAAAJAAMAAAAGAAgAAAAJAAMAAAAFAAgAAAAJAAMAAAAEAAgAAAAJAAMAAAADAAgAAAAJAAMAAAACAAgAAAAJAAMAAAABAAgAAAAIAAMAAAAAAAYAAAACAAMAAAABAAYAAAAIAAIAAAABAAcAAAAIAAEAAAABAAUAAAAIAAEAAAABAAQAAAAIAAEAAAAAAAIAAAAKAAEAAAAAAAMAAAAKAAEAAAAAAAQAAAAKAAEAAAAAAAUAAAAKAAEAAAAAAAcAAAAKAAEAAAAAAAgAAAAKAAEAAAAAAAkAAAAKAAEAAAABAAkAAAAKAAEAAAACAAkAAAAKAAEAAAADAAkAAAAKAAEAAAAEAAkAAAAKAAEAAAAFAAkAAAAKAAEAAAAGAAkAAAAKAAEAAAAHAAkAAAAKAAEAAAAIAAkAAAAKAAEAAAAJAAkAAAAKAAEAAAAKAAkAAAAKAAEAAAALAAkAAAAKAAEAAAALAAgAAAAKAAEAAAALAAcAAAAKAAEAAAALAAYAAAAKAAEAAAALAAUAAAAKAAEAAAALAAQAAAAKAAEAAAALAAMAAAAKAAEAAAAGAAAAAAAKAAEAAAAGAAEAAAAKAAEAAAAGAAMAAAAKAAEAAAAHAAMAAAAKAAEAAAAIAAMAAAAKAAEAAAAJAAMAAAAKAAEAAAAKAAMAAAAKAAEAAAALAAIAAAAKAAEAAAALAAEAAAAKAAEAAAALAAAAAAAKAAEAAAAKAAAAAAAKAAEAAAAJAAAAAAAKAAEAAAAIAAAAAAAKAAEAAAAHAAAAAAAKAAEAAAACAAIAAAAJAAIAAAADAAIAAAAKAAEAAAAEAAIAAAAJAAIAAAAEAAMAAAAJAAIAAAADAAMAAAAJAAIAAAACAAMAAAAJAAIAAAACAAQAAAAJAAIAAAADAAQAAAAJAAIAAAAEAAQAAAAJAAIAAAACAAUAAAAJAAIAAAACAAYAAAAJAAIAAAADAAYAAAAKAAEAAAAEAAYAAAAJAAIAAAAEAAUAAAAJAAIAAAADAAUAAAAJAAIAAAACAAcAAAAJAAIAAAADAAcAAAAJAAIAAAAEAAcAAAAJAAIAAAAFAAYAAAAJAAIAAAAFAAUAAAAJAAIAAAAGAAUAAAAJAAIAAAAGAAYAAAAJAAIAAAAGAAcAAAAJAAIAAAAFAAcAAAAJAAIAAAAHAAYAAAAJAAIAAAAIAAYAAAAKAAEAAAAIAAUAAAAJAAIAAAAHAAUAAAAJAAIAAAAHAAcAAAAJAAIAAAAJAAYAAAAJAAIAAAAJAAUAAAAJAAIAAAAJAAcAAAAJAAIAAAAIAAcAAAAJAAIAAAD//wUAAAAKAAEAAAD+/wUAAAAKAAEAAAD+/wYAAAAKAAEAAAD+/wcAAAAKAAEAAAD//wcAAAAKAAEAAAAGAAIAAAACAAMAAAAHAAIAAAAFAAMAAAAHAAEAAAAIAAAAAAAIAAEAAAAKAAAAAAAJAAEAAAAKAAAAAAAKAAEAAAALAAAAAAAKAAIAAAALAAMAAAAJAAIAAAAJAAMAAAAIAAIAAAAJAAMAAAA=")
 tile_set = SubResource("TileSet_b204x")
 
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_6jf2g")]
@@ -173,30 +179,82 @@ position = Vector2(-24, 208)
 tag = "Room 1"
 
 [node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("5_d242u")]
-position = Vector2(152, 107)
+position = Vector2(240, 48)
 
-[node name="Node" type="Node" parent="." unique_id=1930910637]
+[node name="CollectibleInteractable2" parent="." unique_id=1626208384 instance=ExtResource("5_d242u")]
+position = Vector2(272, 80)
 
-[node name="SwitchInteractable" parent="Node" unique_id=46335732 instance=ExtResource("6_vo8jd")]
+[node name="CollectibleInteractable3" parent="." unique_id=1028049792 instance=ExtResource("5_d242u")]
+position = Vector2(312, 56)
+
+[node name="PuzzleSwitches" type="Node" parent="." unique_id=1930910637]
+
+[node name="0" parent="PuzzleSwitches" unique_id=46335732 instance=ExtResource("6_vo8jd")]
 position = Vector2(203, 132)
 vertical = true
 
-[node name="SwitchInteractable2" parent="Node" unique_id=739470010 instance=ExtResource("6_vo8jd")]
+[node name="1" parent="PuzzleSwitches" unique_id=739470010 instance=ExtResource("6_vo8jd")]
 position = Vector2(229, 132)
 vertical = true
 
-[node name="SwitchInteractable3" parent="Node" unique_id=438836334 instance=ExtResource("6_vo8jd")]
+[node name="2" parent="PuzzleSwitches" unique_id=438836334 instance=ExtResource("6_vo8jd")]
 position = Vector2(255, 132)
 vertical = true
 
-[node name="SwitchInteractable4" parent="Node" unique_id=1289853786 instance=ExtResource("6_vo8jd")]
+[node name="3" parent="PuzzleSwitches" unique_id=1289853786 instance=ExtResource("6_vo8jd")]
 position = Vector2(281, 132)
 vertical = true
 
-[node name="SwitchInteractable5" parent="Node" unique_id=1466440041 instance=ExtResource("6_vo8jd")]
+[node name="4" parent="PuzzleSwitches" unique_id=1466440041 instance=ExtResource("6_vo8jd")]
 position = Vector2(307, 132)
 vertical = true
 
-[node name="SwitchInteractable6" parent="Node" unique_id=1996498284 instance=ExtResource("6_vo8jd")]
+[node name="5" parent="PuzzleSwitches" unique_id=1996498284 instance=ExtResource("6_vo8jd")]
 position = Vector2(333, 132)
 vertical = true
+
+[node name="SideDoor" parent="." unique_id=538996638 instance=ExtResource("7_pxfjx")]
+position = Vector2(208, 80)
+tag = "Room 3 Door"
+
+[node name="SignInteractable" parent="." unique_id=2108489382 instance=ExtResource("8_gmu0l")]
+position = Vector2(336, 46)
+displayActive = true
+
+[node name="OpenedTomb" type="Sprite2D" parent="." unique_id=1713227452]
+position = Vector2(338, 76)
+texture = ExtResource("9_d6qg6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=382626726]
+
+[node name="TextContainer" type="ColorRect" parent="CanvasLayer" unique_id=1311504999]
+z_index = 2
+offset_top = 506.0
+offset_right = 1156.0
+offset_bottom = 642.0
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.78431374)
+script = ExtResource("10_6sibg")
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkText" type="RichTextLabel" parent="CanvasLayer/TextContainer" unique_id=1452427596]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 136.0
+theme_override_font_sizes/normal_font_size = 45
+text = "Some Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="onSwitchInteracted" from="PuzzleSwitches/0" to="." method="_on_switch_interacted"]
+[connection signal="onSwitchInteracted" from="PuzzleSwitches/1" to="." method="_on_switch_interacted"]
+[connection signal="onSwitchInteracted" from="PuzzleSwitches/2" to="." method="_on_switch_interacted"]
+[connection signal="onSwitchInteracted" from="PuzzleSwitches/3" to="." method="_on_switch_interacted"]
+[connection signal="onSwitchInteracted" from="PuzzleSwitches/4" to="." method="_on_switch_interacted"]
+[connection signal="onSwitchInteracted" from="PuzzleSwitches/5" to="." method="_on_switch_interacted"]
+[connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_show_text"]
