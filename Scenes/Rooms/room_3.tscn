@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_6jf2g"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="4_h2y7o"]
 [ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="5_d242u"]
+[ext_resource type="PackedScene" uid="uid://dd78n2bovx2le" path="res://Scenes/Interactables/switch_interactable.tscn" id="6_vo8jd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_1aiob")
@@ -173,3 +174,29 @@ tag = "Room 1"
 
 [node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("5_d242u")]
 position = Vector2(152, 107)
+
+[node name="Node" type="Node" parent="." unique_id=1930910637]
+
+[node name="SwitchInteractable" parent="Node" unique_id=46335732 instance=ExtResource("6_vo8jd")]
+position = Vector2(203, 132)
+vertical = true
+
+[node name="SwitchInteractable2" parent="Node" unique_id=739470010 instance=ExtResource("6_vo8jd")]
+position = Vector2(229, 132)
+vertical = true
+
+[node name="SwitchInteractable3" parent="Node" unique_id=438836334 instance=ExtResource("6_vo8jd")]
+position = Vector2(255, 132)
+vertical = true
+
+[node name="SwitchInteractable4" parent="Node" unique_id=1289853786 instance=ExtResource("6_vo8jd")]
+position = Vector2(281, 132)
+vertical = true
+
+[node name="SwitchInteractable5" parent="Node" unique_id=1466440041 instance=ExtResource("6_vo8jd")]
+position = Vector2(307, 132)
+vertical = true
+
+[node name="SwitchInteractable6" parent="Node" unique_id=1996498284 instance=ExtResource("6_vo8jd")]
+position = Vector2(333, 132)
+vertical = true

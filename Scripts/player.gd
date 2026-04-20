@@ -20,6 +20,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	print(nearby_interactables)
 	if canMove:
 		direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
 		velocity = direction * speed
@@ -29,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("interact"):
 		if nearby_interactables:
-			nearby_interactables.back().interact()
+			nearby_interactables[getClosest(nearby_interactables)].interact()
 		
 	move_and_slide()
 
@@ -63,13 +64,6 @@ func _on_entered_talking() -> void:
 func _on_exited_talking() -> void:
 	canMove = true
 
-#
-#func _on_switch_interacted(toggled: bool) -> void:
-	#pass # Replace with function body.
-
-
-func _on_collectible_collected() -> void:
-	Global.orbsCollected += 1
 
 func _on_collidable_detector_area_entered(area: Area2D) -> void:
 	match area.tag:
@@ -86,3 +80,15 @@ func _on_collidable_detector_area_entered(area: Area2D) -> void:
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Rooms/room_3.tscn")
 		"Room 4":
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Rooms/room_4.tscn")
+
+func getClosest(nearbyNodes: Array):
+	var distanceArray = []
+	var minVal = 10000.0
+	var minIndex = null
+	for i in range(nearbyNodes.size()):
+		distanceArray.append(nearbyNodes[i].position.distance_to(self.position))
+	for i in range(distanceArray.size()):
+		if distanceArray[i] < minVal:
+			minVal = distanceArray[i]
+			minIndex = i
+	return minIndex

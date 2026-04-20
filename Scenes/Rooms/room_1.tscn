@@ -299,7 +299,6 @@ text = ["I'm a pile of bones.", "Call me the bone man.", "Because I'm a pile of 
 [connection signal="exitedTalking" from="SignInteractable2" to="Player" method="_on_exited_talking"]
 [connection signal="exitedTalking" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
 [connection signal="showText" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_show_text"]
-[connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
 [connection signal="onSwitchInteracted" from="HiddenSideTombInteractable/SwitchInteractable2" to="HiddenSideTombInteractable" method="_on_tomb_switch_interacted"]
 [connection signal="onSwitchInteracted" from="HiddenSideTombInteractable3/SwitchInteractable2" to="HiddenSideTombInteractable3" method="_on_tomb_switch_interacted"]
 [connection signal="enteredTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="Player" method="_on_entered_talking"]
