@@ -175,7 +175,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2f642")
 
-[node name="Room1" type="Node2D" unique_id=897087230]
+[node name="Room2" type="Node2D" unique_id=897087230]
 
 [node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("1_ua26k")]
 position = Vector2(211, 84)
@@ -245,3 +245,10 @@ offset_bottom = 56.0
 [node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("5_vsynf")]
 position = Vector2(144, 9)
 tag = "Room 1"
+
+[connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
+[connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_show_text"]
