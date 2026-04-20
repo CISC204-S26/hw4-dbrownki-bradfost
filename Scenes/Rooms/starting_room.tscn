@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="4_2f642"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="5_vsynf"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="6_m48pa"]
+[ext_resource type="PackedScene" uid="uid://dd78n2bovx2le" path="res://Scenes/Interactables/switch_interactable.tscn" id="9_6lm0h"]
+[ext_resource type="PackedScene" uid="uid://hntc7rm85e5h" path="res://Scenes/vertical_door.tscn" id="9_s4uh5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsynf"]
 texture = ExtResource("1_23rsy")
@@ -243,8 +245,15 @@ offset_right = 312.0
 offset_bottom = 56.0
 
 [node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("5_vsynf")]
-position = Vector2(144, 9)
+position = Vector2(144, -8)
 tag = "Room 1"
+
+[node name="SwitchInteractable" parent="." unique_id=1251264787 instance=ExtResource("9_6lm0h")]
+position = Vector2(111, 45)
+vertical = true
+
+[node name="VerticalDoor" parent="." unique_id=389972689 instance=ExtResource("9_s4uh5")]
+position = Vector2(144, 16)
 
 [connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
@@ -252,3 +261,4 @@ tag = "Room 1"
 [connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]
 [connection signal="exitedTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
 [connection signal="showText" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_show_text"]
+[connection signal="onSwitchInteracted" from="SwitchInteractable" to="VerticalDoor" method="_on_switch_interactable_on_switch_interacted"]

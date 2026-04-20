@@ -6,12 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0d3o"]
 size = Vector2(5, 24)
 
-[node name="SideDoor" type="Node2D" unique_id=1611242029]
-script = ExtResource("1_c0d3o")
-
-[node name="DoorSprite" type="Sprite2D" parent="." unique_id=63257465]
+[node name="SideDoor" type="Sprite2D" unique_id=538996638]
 texture = ExtResource("1_mfv7q")
 hframes = 4
+script = ExtResource("1_c0d3o")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2007957611]
 position = Vector2(-0.5, 0)

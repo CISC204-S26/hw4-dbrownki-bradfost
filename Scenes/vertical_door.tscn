@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://hntc7rm85e5h"]
+
+[ext_resource type="Texture2D" uid="uid://lw8sie6exg0o" path="res://Assets/Tilesets/32x32DungeonDoor.png" id="1_dlgje"]
+[ext_resource type="Script" uid="uid://cgqvs5bsjb4ih" path="res://Scripts/vertical_door.gd" id="2_e03er"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e03er"]
+size = Vector2(24, 5)
+
+[node name="VerticalDoor" type="Sprite2D" unique_id=389972689]
+texture = ExtResource("1_dlgje")
+hframes = 4
+frame = 1
+script = ExtResource("2_e03er")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1962913732]
+position = Vector2(-0.5, 0)
+
+[node name="DoorCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=1162079066]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_e03er")

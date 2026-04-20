@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="8_piptf"]
 [ext_resource type="PackedScene" uid="uid://xwtluytum3tq" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="9_0qggq"]
 [ext_resource type="PackedScene" uid="uid://dl4xwxoo1rpcf" path="res://Scenes/Interactables/switch_side_tomb_interactable.tscn" id="10_7rrix"]
-[ext_resource type="PackedScene" path="res://Scenes/side_door.tscn" id="10_evxbx"]
+[ext_resource type="PackedScene" uid="uid://rpv8tnjp8frx" path="res://Scenes/side_door.tscn" id="10_evxbx"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="11_evxbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
@@ -236,9 +236,9 @@ position = Vector2(208, 224)
 text = ["Hi!", "This is some dummy text!", "This conversation will end after this line!"]
 
 [node name="SignInteractable2" parent="." unique_id=391022452 instance=ExtResource("4_476il")]
-position = Vector2(80, 224)
+position = Vector2(144, 422)
 scale = Vector2(-1, 1)
-text = ["This is a different sign", "And it has different text!"]
+text = ["Are you trying turn back now?", "Myaah! YOU FOOL"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871433792]
 
