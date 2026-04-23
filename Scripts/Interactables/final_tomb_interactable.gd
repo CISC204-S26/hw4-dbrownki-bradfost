@@ -3,6 +3,11 @@ extends Interactable
 @export var opened = false
 @export var vertical = false
 @export var rightup = false
+@export var text = []
+var index = 0
+signal enteredTalking
+signal exitedTalking
+signal showText(text: String)
 signal onTombInteracted(toggled: bool)
 
 func _ready():
@@ -35,6 +40,7 @@ func _ready():
 						$TombSprite.frame = 2
 
 func interact():
+	print(index)
 	onTombInteracted.emit(opened)
 	if not opened:
 		opened = true
@@ -52,6 +58,14 @@ func interact():
 						$TombSprite.frame = 7
 					true:
 						$TombSprite.frame = 3
-		#print("Tomb Opened")
-	else:
-		pass
+		$"Tomb Light".hide()
+		enteredTalking.emit()
+		$"../CanvasLayer/TextContainer".hide()
+		await get_tree().create_timer(2.0).timeout
+		$"../CanvasLayer/TextContainer".show()
+		showText.emit(text[index])
+		await get_tree().create_timer(5.0).timeout
+		$"../CanvasLayer/TextContainer".hide()
+		$"../Darkness".color = Color(0.0, 0.0, 0.0, 1.0)
+		#exitedTalking.emit() if we want to allow the player to
+		# move around after the cutscene plays

@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_l41wr"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_xp5el"]
-[ext_resource type="Texture2D" uid="uid://bnl243klf43it" path="res://Assets/Tilesets/Tomb32x32.png" id="3_jwtut"]
+[ext_resource type="PackedScene" uid="uid://xwtluytum3tq" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="3_jwtut"]
+[ext_resource type="Script" uid="uid://x1yowp3v66go" path="res://Scripts/Interactables/final_tomb_interactable.gd" id="4_mv7ug"]
+[ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="5_qyb7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_l41wr")
@@ -148,21 +150,14 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3lycl")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mv7ug"]
-texture = ExtResource("3_jwtut")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
+[sub_resource type="Gradient" id="Gradient_jwtut"]
+offsets = PackedFloat32Array(0, 0.6129808)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="TileSet" id="TileSet_qyb7g"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_mv7ug")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mv7ug"]
+gradient = SubResource("Gradient_jwtut")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Room4" type="Node2D" unique_id=436119235]
 
@@ -171,7 +166,14 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAKAAEAAAABAAAAAAAKAAEAAAACAAAAAAAKAAE
 tile_set = SubResource("TileSet_b204x")
 
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_xp5el")]
+z_index = 4
 position = Vector2(144, 272)
+
+[node name="Light" type="Sprite2D" parent="Player" unique_id=1980086254]
+z_index = 3
+z_as_relative = false
+scale = Vector2(1.0000001, 0.9999999)
+texture = SubResource("GradientTexture2D_mv7ug")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1258095730]
 zoom = Vector2(5, 5)
@@ -180,6 +182,185 @@ limit_top = 0
 limit_right = 288
 limit_bottom = 288
 
-[node name="Tombs" type="TileMapLayer" parent="." unique_id=828058605]
-tile_map_data = PackedByteArray("AAAEAAQAAAAAAAEAAAA=")
-tile_set = SubResource("TileSet_qyb7g")
+[node name="Darkness" type="ColorRect" parent="." unique_id=681212459]
+z_index = 6
+offset_right = 288.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="Final Tomb" parent="." unique_id=2092102697 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(144, 144)
+script = ExtResource("4_mv7ug")
+vertical = true
+rightup = true
+text = ["But there was no body..."]
+
+[node name="Tomb Light" type="Sprite2D" parent="Final Tomb" unique_id=841787248]
+z_as_relative = false
+scale = Vector2(1.0000001, 0.9999999)
+texture = SubResource("GradientTexture2D_mv7ug")
+
+[node name="Node" type="Node" parent="." unique_id=704575671]
+
+[node name="EmptySideTombInteractable2" parent="Node" unique_id=1761241339 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(53, 223)
+opened = true
+vertical = true
+rightup = true
+
+[node name="EmptySideTombInteractable4" parent="Node" unique_id=716477763 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(49, 191)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+opened = true
+vertical = true
+rightup = true
+
+[node name="EmptySideTombInteractable5" parent="Node" unique_id=1290946649 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(49, 159)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+opened = true
+vertical = true
+
+[node name="EmptySideTombInteractable6" parent="Node" unique_id=1483485621 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(49, 95)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+opened = true
+vertical = true
+
+[node name="EmptySideTombInteractable7" parent="Node" unique_id=582494789 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(53, 63)
+opened = true
+vertical = true
+rightup = true
+
+[node name="EmptySideTombInteractable3" parent="Node" unique_id=731126868 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(53, 127)
+opened = true
+vertical = true
+
+[node name="EmptySideTombInteractable8" parent="Node" unique_id=1186497169 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(241, 223)
+opened = true
+vertical = true
+
+[node name="EmptySideTombInteractable14" parent="Node" unique_id=2082691916 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(208, 236)
+opened = true
+
+[node name="EmptySideTombInteractable15" parent="Node" unique_id=1280511459 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(176, 236)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+opened = true
+
+[node name="EmptySideTombInteractable16" parent="Node" unique_id=726348629 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(112, 236)
+opened = true
+rightup = true
+
+[node name="EmptySideTombInteractable17" parent="Node" unique_id=489492003 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(80, 236)
+opened = true
+rightup = true
+
+[node name="EmptySideTombInteractable18" parent="Node" unique_id=1512941650 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(208, 48)
+opened = true
+rightup = true
+
+[node name="EmptySideTombInteractable19" parent="Node" unique_id=1138975996 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(176, 48)
+opened = true
+
+[node name="EmptySideTombInteractable20" parent="Node" unique_id=1459469589 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(112, 48)
+opened = true
+
+[node name="EmptySideTombInteractable21" parent="Node" unique_id=2097512817 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(80, 48)
+opened = true
+rightup = true
+
+[node name="EmptySideTombInteractable9" parent="Node" unique_id=1978964536 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(241, 191)
+opened = true
+vertical = true
+rightup = true
+
+[node name="EmptySideTombInteractable10" parent="Node" unique_id=649679350 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(237, 159)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+opened = true
+vertical = true
+
+[node name="EmptySideTombInteractable11" parent="Node" unique_id=784004345 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(237, 95)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+opened = true
+vertical = true
+
+[node name="EmptySideTombInteractable12" parent="Node" unique_id=1712766081 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(237, 63)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+opened = true
+vertical = true
+
+[node name="EmptySideTombInteractable13" parent="Node" unique_id=866692260 instance=ExtResource("3_jwtut")]
+z_index = 1
+position = Vector2(241, 127)
+opened = true
+vertical = true
+rightup = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1315423355]
+
+[node name="TextContainer" type="ColorRect" parent="CanvasLayer" unique_id=1449196108]
+z_index = 2
+offset_top = 506.0
+offset_right = 1156.0
+offset_bottom = 642.0
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.78431374)
+script = ExtResource("5_qyb7g")
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkText" type="RichTextLabel" parent="CanvasLayer/TextContainer" unique_id=461733105]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 136.0
+theme_override_font_sizes/normal_font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="enteredTalking" from="Final Tomb" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="Final Tomb" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="Final Tomb" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="Final Tomb" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="Final Tomb" to="CanvasLayer/TextContainer" method="_on_show_text"]
