@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dl4xwxoo1rpcf" path="res://Scenes/Interactables/switch_side_tomb_interactable.tscn" id="10_7rrix"]
 [ext_resource type="PackedScene" uid="uid://rpv8tnjp8frx" path="res://Scenes/side_door.tscn" id="10_evxbx"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="11_evxbx"]
+[ext_resource type="PackedScene" uid="uid://bwnyhx4syw5xl" path="res://Scenes/final_door.tscn" id="11_vwayj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gevy"]
 texture = ExtResource("1_3t5sg")
@@ -298,6 +299,9 @@ hiddenElement = NodePath("SwitchInteractable2")
 
 [node name="SwitchInteractable2" parent="HiddenSideTombInteractable3" unique_id=618023244 instance=ExtResource("7_3rs20")]
 position = Vector2(0, -2)
+
+[node name="FinalDoor" parent="HiddenSideTombInteractable3" unique_id=389972689 instance=ExtResource("11_vwayj")]
+position = Vector2(64, -288)
 
 [node name="HiddenSideTombInteractable2" parent="." unique_id=830321286 node_paths=PackedStringArray("hiddenElement") instance=ExtResource("10_7rrix")]
 position = Vector2(208, 304)

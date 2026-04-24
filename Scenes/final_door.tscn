@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bwnyhx4syw5xl"]
+
+[ext_resource type="Texture2D" uid="uid://lw8sie6exg0o" path="res://Assets/Tilesets/32x32DungeonDoor.png" id="1_sely0"]
+[ext_resource type="Script" uid="uid://djbnsdht1l253" path="res://Scripts/final_door.gd" id="2_kdeou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e03er"]
+size = Vector2(24, 5)
+
+[node name="FinalDoor" type="Sprite2D" unique_id=389972689]
+texture = ExtResource("1_sely0")
+hframes = 4
+frame = 1
+script = ExtResource("2_kdeou")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1962913732]
+position = Vector2(-0.5, 0)
+
+[node name="DoorCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=1162079066]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_e03er")

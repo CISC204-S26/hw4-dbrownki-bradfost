@@ -1,6 +1,6 @@
 extends Node2D
 
-var switchCombination = [false, true, true, true, false, true]
+var switchCombination = [false, true, true, false, true]
 # The correct combination of switch states.
 @export var puzzleSwitches: Node
 # Stores a reference to the parent node of the switches, so we

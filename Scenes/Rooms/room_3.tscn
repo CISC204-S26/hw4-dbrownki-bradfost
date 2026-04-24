@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_1aiob"]
 [ext_resource type="Script" uid="uid://hfhca1oec5of" path="res://Scripts/room_3.gd" id="1_52rh1"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_6jf2g"]
+[ext_resource type="Texture2D" uid="uid://ccat4lhdb6cbq" path="res://Assets/Tilesets/Puzzle.png" id="3_85m3g"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="4_h2y7o"]
 [ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="5_d242u"]
 [ext_resource type="PackedScene" uid="uid://dd78n2bovx2le" path="res://Scenes/Interactables/switch_interactable.tscn" id="6_vo8jd"]
@@ -155,6 +156,16 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3lycl")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oq7p"]
+texture = ExtResource("3_85m3g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y2k38"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_1oq7p")
+
 [sub_resource type="Gradient" id="Gradient_6sibg"]
 offsets = PackedFloat32Array(0, 0.6129808)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -172,6 +183,10 @@ puzzleDoor = NodePath("SideDoor")
 [node name="DungeonTiles" type="TileMapLayer" parent="." unique_id=685220191]
 tile_map_data = PackedByteArray("AAAAAAAAAAAKAAEAAAABAAAAAAAKAAEAAAACAAAAAAAKAAEAAAAAAAEAAAAKAAEAAAADAAAAAAAKAAEAAAAEAAAAAAAKAAEAAAAFAAAAAAAKAAEAAAABAAEAAAAIAAAAAAACAAEAAAAKAAAAAAADAAEAAAAKAAAAAAAEAAEAAAAKAAAAAAAFAAEAAAALAAAAAAABAAIAAAAIAAEAAAABAAMAAAAIAAEAAAAFAAIAAAALAAEAAAAFAAMAAAALAAIAAAAKAAQAAAALAAAAAAAKAAUAAAALAAIAAAAKAAYAAAALAAIAAAAKAAcAAAALAAIAAAAKAAgAAAALAAMAAAAFAAQAAAAGAAEAAAAGAAQAAAAKAAAAAAAHAAQAAAAKAAAAAAAIAAQAAAAKAAAAAAAJAAQAAAAKAAAAAAAJAAgAAAAJAAMAAAAIAAgAAAAJAAMAAAAHAAgAAAAJAAMAAAAGAAgAAAAJAAMAAAAFAAgAAAAJAAMAAAAEAAgAAAAJAAMAAAADAAgAAAAJAAMAAAACAAgAAAAJAAMAAAABAAgAAAAIAAMAAAAAAAYAAAACAAMAAAABAAYAAAAIAAIAAAABAAcAAAAIAAEAAAABAAUAAAAIAAEAAAABAAQAAAAIAAEAAAAAAAIAAAAKAAEAAAAAAAMAAAAKAAEAAAAAAAQAAAAKAAEAAAAAAAUAAAAKAAEAAAAAAAcAAAAKAAEAAAAAAAgAAAAKAAEAAAAAAAkAAAAKAAEAAAABAAkAAAAKAAEAAAACAAkAAAAKAAEAAAADAAkAAAAKAAEAAAAEAAkAAAAKAAEAAAAFAAkAAAAKAAEAAAAGAAkAAAAKAAEAAAAHAAkAAAAKAAEAAAAIAAkAAAAKAAEAAAAJAAkAAAAKAAEAAAAKAAkAAAAKAAEAAAALAAkAAAAKAAEAAAALAAgAAAAKAAEAAAALAAcAAAAKAAEAAAALAAYAAAAKAAEAAAALAAUAAAAKAAEAAAALAAQAAAAKAAEAAAALAAMAAAAKAAEAAAAGAAAAAAAKAAEAAAAGAAEAAAAKAAEAAAAGAAMAAAAKAAEAAAAHAAMAAAAKAAEAAAAIAAMAAAAKAAEAAAAJAAMAAAAKAAEAAAAKAAMAAAAKAAEAAAALAAIAAAAKAAEAAAALAAEAAAAKAAEAAAALAAAAAAAKAAEAAAAKAAAAAAAKAAEAAAAJAAAAAAAKAAEAAAAIAAAAAAAKAAEAAAAHAAAAAAAKAAEAAAACAAIAAAAJAAIAAAADAAIAAAAKAAEAAAAEAAIAAAAJAAIAAAAEAAMAAAAJAAIAAAADAAMAAAAJAAIAAAACAAMAAAAJAAIAAAACAAQAAAAJAAIAAAADAAQAAAAJAAIAAAAEAAQAAAAJAAIAAAACAAUAAAAJAAIAAAACAAYAAAAJAAIAAAADAAYAAAAKAAEAAAAEAAYAAAAJAAIAAAAEAAUAAAAJAAIAAAADAAUAAAAJAAIAAAACAAcAAAAJAAIAAAADAAcAAAAJAAIAAAAEAAcAAAAJAAIAAAAFAAYAAAAJAAIAAAAFAAUAAAAJAAIAAAAGAAUAAAAJAAIAAAAGAAYAAAAJAAIAAAAGAAcAAAAJAAIAAAAFAAcAAAAJAAIAAAAHAAYAAAAJAAIAAAAIAAYAAAAKAAEAAAAIAAUAAAAJAAIAAAAHAAUAAAAJAAIAAAAHAAcAAAAJAAIAAAAJAAYAAAAJAAIAAAAJAAUAAAAJAAIAAAAJAAcAAAAJAAIAAAAIAAcAAAAJAAIAAAD//wUAAAAKAAEAAAD+/wUAAAAKAAEAAAD+/wYAAAAKAAEAAAD+/wcAAAAKAAEAAAD//wcAAAAKAAEAAAAGAAIAAAACAAMAAAAHAAIAAAAFAAMAAAAHAAEAAAAIAAAAAAAIAAEAAAAKAAAAAAAJAAEAAAAKAAAAAAAKAAEAAAALAAAAAAAKAAIAAAALAAMAAAAJAAIAAAAJAAMAAAAIAAIAAAAJAAMAAAA=")
 tile_set = SubResource("TileSet_b204x")
+
+[node name="PuzzleTiles" type="TileMapLayer" parent="." unique_id=1911100045]
+tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAKAAMAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_y2k38")
 
 [node name="Player" parent="." unique_id=2065409206 instance=ExtResource("2_6jf2g")]
 position = Vector2(17, 207)
@@ -206,27 +221,23 @@ position = Vector2(312, 56)
 [node name="PuzzleSwitches" type="Node" parent="." unique_id=1930910637]
 
 [node name="0" parent="PuzzleSwitches" unique_id=46335732 instance=ExtResource("6_vo8jd")]
-position = Vector2(203, 132)
+position = Vector2(208, 132)
 vertical = true
 
 [node name="1" parent="PuzzleSwitches" unique_id=739470010 instance=ExtResource("6_vo8jd")]
-position = Vector2(229, 132)
+position = Vector2(240, 132)
 vertical = true
 
 [node name="2" parent="PuzzleSwitches" unique_id=438836334 instance=ExtResource("6_vo8jd")]
-position = Vector2(255, 132)
+position = Vector2(272, 132)
 vertical = true
 
 [node name="3" parent="PuzzleSwitches" unique_id=1289853786 instance=ExtResource("6_vo8jd")]
-position = Vector2(281, 132)
+position = Vector2(304, 132)
 vertical = true
 
 [node name="4" parent="PuzzleSwitches" unique_id=1466440041 instance=ExtResource("6_vo8jd")]
-position = Vector2(307, 132)
-vertical = true
-
-[node name="5" parent="PuzzleSwitches" unique_id=1996498284 instance=ExtResource("6_vo8jd")]
-position = Vector2(333, 132)
+position = Vector2(336, 132)
 vertical = true
 
 [node name="SideDoor" parent="." unique_id=538996638 instance=ExtResource("7_pxfjx")]
@@ -266,19 +277,38 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Darkness" type="ColorRect" parent="." unique_id=1569878018]
 z_index = 6
-offset_top = 1.5258789e-05
-offset_right = 383.99994
-offset_bottom = 320.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 384.99994
+offset_bottom = 321.0
 color = Color(0, 0, 0, 0.3529412)
+metadata/_edit_lock_ = true
+
+[node name="SignInteractable2" parent="." unique_id=532845368 instance=ExtResource("8_gmu0l")]
+position = Vector2(271, 181)
+text = ["You struggling with the puzzle?", "Fgures...", "It's a shitty puzzle isn't it?", "That dumb ass over there made it.", "Before he died of course...", "I would ask him about it if you need help.", "...", "Oh, you don't know what over there is?", "Behind the pillar, good luck with that stupid puzzle."]
+
+[node name="SignInteractable3" parent="." unique_id=882443204 instance=ExtResource("8_gmu0l")]
+position = Vector2(272, 235)
+text = ["Myah", "How are you doing with MY ingenious puzzle?", "Yes, I, am the grand architect of it. ", "Oh...", "You hate it?", "You think it sucks?", "FUCK YOU", "...", "Square is green and triangles red.", "Now leave me be, you've done enough", "Asshole"]
 
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/0" to="." method="_on_switch_interacted"]
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/1" to="." method="_on_switch_interacted"]
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/2" to="." method="_on_switch_interacted"]
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/3" to="." method="_on_switch_interacted"]
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/4" to="." method="_on_switch_interacted"]
-[connection signal="onSwitchInteracted" from="PuzzleSwitches/5" to="." method="_on_switch_interacted"]
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
 [connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]
 [connection signal="exitedTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
 [connection signal="showText" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_show_text"]
+[connection signal="enteredTalking" from="SignInteractable2" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="SignInteractable2" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="SignInteractable2" to="CanvasLayer/TextContainer" method="_on_show_text"]
+[connection signal="enteredTalking" from="SignInteractable3" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="SignInteractable3" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="SignInteractable3" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="SignInteractable3" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="SignInteractable3" to="CanvasLayer/TextContainer" method="_on_show_text"]
