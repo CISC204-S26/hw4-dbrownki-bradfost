@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dprsh3omrcap6" path="res://Assets/Tilesets/Base32x32-47Dungeon.png" id="1_6lm0h"]
 [ext_resource type="Texture2D" uid="uid://cwhxwx6u1vd5c" path="res://Assets/Tilesets/Grass.png" id="1_23rsy"]
-[ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="1_ua26k"]
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="3_po8fx"]
 [ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="4_2f642"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="5_vsynf"]
@@ -179,9 +178,6 @@ sources/0 = SubResource("TileSetAtlasSource_2f642")
 
 [node name="Room2" type="Node2D" unique_id=897087230]
 
-[node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("1_ua26k")]
-position = Vector2(211, 84)
-
 [node name="SignInteractable" parent="." unique_id=569986027 instance=ExtResource("4_2f642")]
 position = Vector2(146, 70)
 text = ["Oh, another fool trying to find their body...", "I promise you it will be a waste of time", "...", "Still here?", "Persistent...", "Well, go pull that lever to go in, but I promise you, waste of time. "]
@@ -241,7 +237,6 @@ vertical = true
 [node name="VerticalDoor" parent="." unique_id=389972689 instance=ExtResource("9_s4uh5")]
 position = Vector2(144, 16)
 
-[connection signal="collectibleCollected" from="CollectibleInteractable" to="Player" method="_on_collectible_collected"]
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
 [connection signal="exitedTalking" from="SignInteractable" to="Player" method="_on_exited_talking"]

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="8_gmu0l"]
 [ext_resource type="Texture2D" uid="uid://du6keoo3b7fvv" path="res://Assets/Tomb Sprites/TombSprites-4.png.png" id="9_d6qg6"]
 [ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="10_6sibg"]
+[ext_resource type="PackedScene" uid="uid://xwtluytum3tq" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="12_1oq7p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_1aiob")
@@ -286,11 +287,35 @@ metadata/_edit_lock_ = true
 
 [node name="SignInteractable2" parent="." unique_id=532845368 instance=ExtResource("8_gmu0l")]
 position = Vector2(271, 181)
-text = ["You struggling with the puzzle?", "Fgures...", "It's a shitty puzzle isn't it?", "That dumb ass over there made it.", "Before he died of course...", "I would ask him about it if you need help.", "...", "Oh, you don't know what over there is?", "Behind the pillar, good luck with that stupid puzzle."]
+text = ["You struggling with the puzzle?", "Figures...", "It's a shitty puzzle isn't it?", "That dumb ass over there made it.", "Before he died of course...", "I would ask him about it if you need help.", "...", "Oh, you don't know what over there is?", "Behind the pillar, good luck with that stupid puzzle."]
 
 [node name="SignInteractable3" parent="." unique_id=882443204 instance=ExtResource("8_gmu0l")]
 position = Vector2(272, 235)
 text = ["Myah", "How are you doing with MY ingenious puzzle?", "Yes, I, am the grand architect of it. ", "Oh...", "You hate it?", "You think it sucks?", "FUCK YOU", "...", "Square is green and triangles red.", "Now leave me be, you've done enough", "Asshole"]
+
+[node name="CollectibleInteractable4" parent="." unique_id=1772595120 instance=ExtResource("5_d242u")]
+position = Vector2(78, 79)
+
+[node name="CollectibleInteractable5" parent="." unique_id=667789521 instance=ExtResource("5_d242u")]
+position = Vector2(79, 208)
+
+[node name="EmptySideTombInteractable" parent="." unique_id=2092102697 instance=ExtResource("12_1oq7p")]
+position = Vector2(112, 177)
+
+[node name="EmptySideTombInteractable2" parent="." unique_id=2061210011 instance=ExtResource("12_1oq7p")]
+position = Vector2(112, 109)
+
+[node name="EmptySideTombInteractable3" parent="." unique_id=538501649 instance=ExtResource("12_1oq7p")]
+position = Vector2(112, 237)
+
+[node name="EmptySideTombInteractable4" parent="." unique_id=1863115714 instance=ExtResource("12_1oq7p")]
+position = Vector2(112, 269)
+
+[node name="EmptySideTombInteractable5" parent="." unique_id=1781132739 instance=ExtResource("12_1oq7p")]
+position = Vector2(208, 206)
+
+[node name="EmptySideTombInteractable6" parent="." unique_id=2042333665 instance=ExtResource("12_1oq7p")]
+position = Vector2(207, 241)
 
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/0" to="." method="_on_switch_interacted"]
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/1" to="." method="_on_switch_interacted"]

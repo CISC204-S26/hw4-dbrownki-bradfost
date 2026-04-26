@@ -189,10 +189,20 @@ position = Vector2(360, 144)
 tag = "Room 1"
 
 [node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("5_on05m")]
-position = Vector2(211, 84)
+position = Vector2(210, 81)
 
 [node name="Darkness" type="ColorRect" parent="." unique_id=547576791]
 z_index = 6
 offset_right = 352.0
 offset_bottom = 288.0
 color = Color(0, 0, 0, 0.3529412)
+metadata/_edit_lock_ = true
+
+[node name="CollectibleInteractable2" parent="." unique_id=649419220 instance=ExtResource("5_on05m")]
+position = Vector2(144, 84)
+
+[node name="CollectibleInteractable3" parent="." unique_id=1959850812 instance=ExtResource("5_on05m")]
+position = Vector2(209, 206)
+
+[node name="CollectibleInteractable4" parent="." unique_id=1356043865 instance=ExtResource("5_on05m")]
+position = Vector2(142, 207)

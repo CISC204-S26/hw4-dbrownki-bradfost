@@ -280,9 +280,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="CollectibleInteractable" parent="." unique_id=661864919 instance=ExtResource("8_piptf")]
-position = Vector2(139, 283)
-
 [node name="HiddenSideTombInteractable" parent="." unique_id=1227094181 node_paths=PackedStringArray("doorToOpen", "hiddenElement") instance=ExtResource("10_7rrix")]
 position = Vector2(208, 176)
 rightup = true
@@ -316,6 +313,13 @@ offset_right = 288.0
 offset_bottom = 416.0
 color = Color(0, 0, 0, 0.3529412)
 
+[node name="SignInteractable3" parent="." unique_id=1837391755 instance=ExtResource("4_476il")]
+position = Vector2(139, 309)
+text = ["Myah", "If it isn't Mr. Ghost still looking for his very much dead body", "That dead body that is NOT at the locked room at the end of the hallway", "And that locked room that you definitely dont need to collect 10 orbs to open", "And looking through the tombs using E will definitely not help in that hunt", "And there is definitely not orbs in the two side rooms..."]
+
+[node name="CollectibleInteractable" parent="." unique_id=956846380 instance=ExtResource("8_piptf")]
+position = Vector2(139, 284)
+
 [connection signal="ready" from="Player" to="Player" method="_on_ready"]
 [connection signal="enteredTalking" from="SignInteractable" to="Player" method="_on_entered_talking"]
 [connection signal="enteredTalking" from="SignInteractable" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
@@ -334,3 +338,8 @@ color = Color(0, 0, 0, 0.3529412)
 [connection signal="exitedTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="Player" method="_on_exited_talking"]
 [connection signal="exitedTalking" from="HiddenSideTombInteractable2/SignInteractable3" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
 [connection signal="showText" from="HiddenSideTombInteractable2/SignInteractable3" to="CanvasLayer/TextContainer" method="_on_show_text"]
+[connection signal="enteredTalking" from="SignInteractable3" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="SignInteractable3" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="SignInteractable3" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="SignInteractable3" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="SignInteractable3" to="CanvasLayer/TextContainer" method="_on_show_text"]
