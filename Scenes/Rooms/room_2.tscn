@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://b6bd15mjyo761" path="res://Scenes/player.tscn" id="2_v3nlv"]
 [ext_resource type="PackedScene" uid="uid://bsp2hl5i3x21k" path="res://Scenes/Collidable.tscn" id="3_qqf27"]
 [ext_resource type="PackedScene" uid="uid://b6n2il0p3jrj7" path="res://Scenes/Interactables/collectible_interactable.tscn" id="5_on05m"]
+[ext_resource type="PackedScene" uid="uid://cqjf3bl2fbnsx" path="res://Scenes/Interactables/sign_interactable.tscn" id="6_n7ha0"]
+[ext_resource type="Texture2D" uid="uid://bo60p2u4ynt6b" path="res://Assets/Tomb Sprites/TombSprites-3.png.png" id="7_45ak3"]
+[ext_resource type="Texture2D" uid="uid://bcqwsi17ldpfw" path="res://Assets/Tomb Sprites/TombSprites-7.png.png" id="8_a7fd0"]
+[ext_resource type="Script" uid="uid://dcv2vm8sb0jyf" path="res://Scripts/Interactables/talkingScript.gd" id="9_a7fd0"]
+[ext_resource type="PackedScene" uid="uid://xwtluytum3tq" path="res://Scenes/Interactables/empty_horz_tomb_interactable.tscn" id="10_7kur8"]
+[ext_resource type="PackedScene" uid="uid://dl4xwxoo1rpcf" path="res://Scenes/Interactables/switch_side_tomb_interactable.tscn" id="11_05rod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lycl"]
 texture = ExtResource("1_e4ips")
@@ -184,12 +190,17 @@ position = Vector2(-1, 1)
 scale = Vector2(1.0000001, 0.9999999)
 texture = SubResource("GradientTexture2D_on05m")
 
+[node name="TombSprites3_png" type="Sprite2D" parent="." unique_id=865419468]
+position = Vector2(48, 160)
+texture = ExtResource("7_45ak3")
+
+[node name="TombSprites7_png" type="Sprite2D" parent="." unique_id=1957147285]
+position = Vector2(48, 128)
+texture = ExtResource("8_a7fd0")
+
 [node name="Collidable" parent="." unique_id=1032584171 instance=ExtResource("3_qqf27")]
 position = Vector2(360, 144)
 tag = "Room 1"
-
-[node name="CollectibleInteractable" parent="." unique_id=993458865 instance=ExtResource("5_on05m")]
-position = Vector2(210, 81)
 
 [node name="Darkness" type="ColorRect" parent="." unique_id=547576791]
 z_index = 6
@@ -199,10 +210,102 @@ color = Color(0, 0, 0, 0.3529412)
 metadata/_edit_lock_ = true
 
 [node name="CollectibleInteractable2" parent="." unique_id=649419220 instance=ExtResource("5_on05m")]
-position = Vector2(144, 84)
+position = Vector2(130, 53)
 
-[node name="CollectibleInteractable3" parent="." unique_id=1959850812 instance=ExtResource("5_on05m")]
-position = Vector2(209, 206)
+[node name="Daw-Soul" parent="." unique_id=622266382 instance=ExtResource("6_n7ha0")]
+position = Vector2(48, 128)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+text = ["HELLO THERE!!!!!", "You found us, the greatest things to ever find!", "What are we, you might be asking???", "Well, I'm so glad you definitely asked!", "We are the Bony Bros.!", "I'm Daw-Soul.", "And the guy to my right is Boo-Rad.", "Super cool guy. Definitely recommend talking to him.", "He's actually the one that started that whole thing you might've seen with the other guys.", "Y'know, the \"Myah?\"", "All him, broski.", "He's got like a whole fan club in here.", "And me? I just chill; hang with my bro.", "Oh, and by the way.", "He's got a pretty impressive BONE collection.", "He'll tell you all about it if you ask him.", "But uhh... that's about all I have to share.", "Thanks for visiting, broski!"]
 
-[node name="CollectibleInteractable4" parent="." unique_id=1356043865 instance=ExtResource("5_on05m")]
-position = Vector2(142, 207)
+[node name="Boo-Rad" parent="." unique_id=921978400 instance=ExtResource("6_n7ha0")]
+position = Vector2(48, 160)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+text = ["I'm Boo-Rad.", "Pretty sure you've met my bro over there, Daw-Soul.", "What a guy.", "I heard he was trying to make some game with like 23 other guys in here.", "Pretty wild stuff.", "Hey you should come to his playtest.", "I tried asking as many people as I could for the last one he did.", "Tried to spread the word, you know.", "And we got a good amount of people to show up.", "Except for one, you know.", "He kind of flaked last minute.", "But its alright; we got the feedback.", "But, whatever you do...", "Don't ask Daw-Soul about mirrors.", "He doesn't know how to use them.", "He might say he does, but he doesn't know.", "So don't ask."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=599705789]
+
+[node name="TextContainer" type="ColorRect" parent="CanvasLayer" unique_id=685778941]
+z_index = 2
+offset_top = 506.0
+offset_right = 1156.0
+offset_bottom = 642.0
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.78431374)
+script = ExtResource("9_a7fd0")
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkText" type="RichTextLabel" parent="CanvasLayer/TextContainer" unique_id=940033476]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 136.0
+theme_override_font_sizes/normal_font_size = 45
+text = "Some Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EmptySideTombInteractable2" parent="." unique_id=2092102697 instance=ExtResource("10_7kur8")]
+position = Vector2(296, 48)
+
+[node name="EmptySideTombInteractable10" parent="." unique_id=96051511 instance=ExtResource("10_7kur8")]
+position = Vector2(256, 237)
+opened = true
+
+[node name="EmptySideTombInteractable11" parent="." unique_id=1597616346 instance=ExtResource("10_7kur8")]
+position = Vector2(216, 237)
+
+[node name="EmptySideTombInteractable12" parent="." unique_id=1741049930 instance=ExtResource("10_7kur8")]
+position = Vector2(176, 237)
+
+[node name="EmptySideTombInteractable14" parent="." unique_id=316034935 instance=ExtResource("10_7kur8")]
+position = Vector2(96, 237)
+
+[node name="EmptySideTombInteractable15" parent="." unique_id=1394272406 instance=ExtResource("10_7kur8")]
+position = Vector2(56, 237)
+
+[node name="EmptySideTombInteractable3" parent="." unique_id=693126142 instance=ExtResource("10_7kur8")]
+position = Vector2(256, 48)
+
+[node name="EmptySideTombInteractable5" parent="." unique_id=1191058734 instance=ExtResource("10_7kur8")]
+position = Vector2(176, 48)
+
+[node name="EmptySideTombInteractable6" parent="." unique_id=100657890 instance=ExtResource("10_7kur8")]
+position = Vector2(136, 48)
+opened = true
+
+[node name="EmptySideTombInteractable7" parent="." unique_id=981995016 instance=ExtResource("10_7kur8")]
+position = Vector2(96, 48)
+
+[node name="EmptySideTombInteractable8" parent="." unique_id=238404384 instance=ExtResource("10_7kur8")]
+position = Vector2(56, 48)
+
+[node name="HiddenSideTombInteractable4" parent="." unique_id=1821983069 node_paths=PackedStringArray("hiddenElement") instance=ExtResource("11_05rod")]
+position = Vector2(296, 237)
+hiddenElement = NodePath("CollectibleInteractable")
+
+[node name="CollectibleInteractable" parent="HiddenSideTombInteractable4" unique_id=993458865 instance=ExtResource("5_on05m")]
+
+[node name="HiddenSideTombInteractable6" parent="." unique_id=975419295 node_paths=PackedStringArray("hiddenElement") instance=ExtResource("11_05rod")]
+position = Vector2(136, 237)
+hiddenElement = NodePath("CollectibleInteractable")
+
+[node name="CollectibleInteractable" parent="HiddenSideTombInteractable6" unique_id=12754449 instance=ExtResource("5_on05m")]
+
+[node name="HiddenSideTombInteractable5" parent="." unique_id=2135769271 node_paths=PackedStringArray("hiddenElement") instance=ExtResource("11_05rod")]
+position = Vector2(216, 48)
+hiddenElement = NodePath("CollectibleInteractable")
+
+[node name="CollectibleInteractable" parent="HiddenSideTombInteractable5" unique_id=506927832 instance=ExtResource("5_on05m")]
+
+[connection signal="enteredTalking" from="Daw-Soul" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="Daw-Soul" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="Daw-Soul" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="Daw-Soul" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="Daw-Soul" to="CanvasLayer/TextContainer" method="_on_show_text"]
+[connection signal="enteredTalking" from="Boo-Rad" to="Player" method="_on_entered_talking"]
+[connection signal="enteredTalking" from="Boo-Rad" to="CanvasLayer/TextContainer" method="_on_entered_talking"]
+[connection signal="exitedTalking" from="Boo-Rad" to="Player" method="_on_exited_talking"]
+[connection signal="exitedTalking" from="Boo-Rad" to="CanvasLayer/TextContainer" method="_on_exited_talking"]
+[connection signal="showText" from="Boo-Rad" to="CanvasLayer/TextContainer" method="_on_show_text"]

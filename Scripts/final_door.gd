@@ -1,5 +1,5 @@
 extends Sprite2D
 
-func _process(delta: float) -> void:
-	if Global.orbsCollected <= 10:
+func _ready():
+	if Global.orbsCollected >= 10 and Global.switchPuzzleSolved:
 		queue_free()

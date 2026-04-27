@@ -91,7 +91,3 @@ func getClosest(nearbyNodes: Array):
 			minVal = distanceArray[i]
 			minIndex = i
 	return minIndex
-
-
-func _on_sign_interactable_3_exited_talking() -> void:
-	pass # Replace with function body.

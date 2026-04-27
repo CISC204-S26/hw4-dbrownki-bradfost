@@ -25,6 +25,9 @@ func _ready():
 	if hiddenElement:
 		hiddenElement.hide()
 		hiddenElement.process_mode = Node.PROCESS_MODE_DISABLED
+	if opened:
+		opened = false
+		interact()
 
 func interact():
 	if opened == false:

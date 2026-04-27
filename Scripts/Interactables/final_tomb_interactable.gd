@@ -58,6 +58,7 @@ func interact():
 						$TombSprite.frame = 7
 					true:
 						$TombSprite.frame = 3
+		Global.final_tomb_opened = true
 		$"Tomb Light".hide()
 		enteredTalking.emit()
 		$"../CanvasLayer/TextContainer".hide()

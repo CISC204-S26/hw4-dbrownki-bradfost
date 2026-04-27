@@ -216,6 +216,9 @@ position = Vector2(240, 48)
 [node name="CollectibleInteractable2" parent="." unique_id=1626208384 instance=ExtResource("5_d242u")]
 position = Vector2(272, 80)
 
+[node name="CollectibleInteractable6" parent="." unique_id=1013391796 instance=ExtResource("5_d242u")]
+position = Vector2(336, 76)
+
 [node name="CollectibleInteractable3" parent="." unique_id=1028049792 instance=ExtResource("5_d242u")]
 position = Vector2(312, 56)
 
@@ -278,7 +281,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Darkness" type="ColorRect" parent="." unique_id=1569878018]
 z_index = 6
-offset_left = 1.0
 offset_top = 1.0
 offset_right = 384.99994
 offset_bottom = 321.0
@@ -316,6 +318,21 @@ position = Vector2(208, 206)
 
 [node name="EmptySideTombInteractable6" parent="." unique_id=2042333665 instance=ExtResource("12_1oq7p")]
 position = Vector2(207, 241)
+
+[node name="EmptySideTombInteractable7" parent="." unique_id=735918960 instance=ExtResource("12_1oq7p")]
+position = Vector2(336, 264)
+vertical = true
+rightup = true
+
+[node name="EmptySideTombInteractable8" parent="." unique_id=1342561406 instance=ExtResource("12_1oq7p")]
+position = Vector2(336, 232)
+vertical = true
+rightup = true
+
+[node name="EmptySideTombInteractable9" parent="." unique_id=1938255192 instance=ExtResource("12_1oq7p")]
+position = Vector2(336, 200)
+vertical = true
+rightup = true
 
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/0" to="." method="_on_switch_interacted"]
 [connection signal="onSwitchInteracted" from="PuzzleSwitches/1" to="." method="_on_switch_interacted"]

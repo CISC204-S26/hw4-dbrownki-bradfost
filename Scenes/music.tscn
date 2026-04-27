@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b5j82ghvue10m"]
 
 [ext_resource type="AudioStream" uid="uid://ksuphi1gwrqd" path="res://Assets/Music/08-The Cave.mp3" id="1_fbmny"]
+[ext_resource type="Script" uid="uid://cu5pao4neu4ok" path="res://Scripts/music.gd" id="2_qxpp0"]
 
 [node name="Music" type="AudioStreamPlayer2D" unique_id=42203345]
 stream = ExtResource("1_fbmny")
 autoplay = true
 parameters/looping = true
+script = ExtResource("2_qxpp0")
